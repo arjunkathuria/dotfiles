@@ -1,0 +1,18 @@
+[user]
+	name = Arjun Kathuria
+	email = arjun.kathuria8@gmail.com
+[color]
+	ui = true
+[alias]
+	s = status
+	co = checkout
+	cma = commit --all -m
+	lg = log --pretty='%Cred%h%Creset |%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph
+	dp = diff --word-diff --unified=10
+	so = show --pretty='parent %Cred%p%Creset commit %Cred%h%Creset%C(yellow)%d%Creset%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an%Creset %Cgreen%ar%Creset'
+	st = status --short --branch
+[diff]
+	algorithm = histogram
+[core]
+	pager = less -RFX
+	editor = nvim
