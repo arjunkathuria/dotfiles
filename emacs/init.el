@@ -7,6 +7,7 @@
 
 
 ;;; set gc limit
+
 (setq gc-cons-threshold 50000000)
 (setq gnutls-min-prime-bits 4096)
 
@@ -108,7 +109,7 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-term-color-vector
    [unspecified "#1e1e1e" "#cf6a4c" "#8f9d6a" "#f9ee98" "#7587a6" "#9b859d" "#7587a6" "#a7a7a7"] t)
- '(custom-enabled-themes (quote (sanityinc-solarized-dark)))
+ '(custom-enabled-themes (quote (base16-oceanicnext)))
  '(custom-safe-themes
    (quote
     ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "5a7830712d709a4fc128a7998b7fa963f37e960fd2e8aa75c76f692b36e6cf3c" "aea30125ef2e48831f46695418677b9d676c3babf43959c8e978c0ad672a7329" default)))
@@ -120,7 +121,7 @@
  '(ido-mode (quote both) nil (ido))
  '(package-selected-packages
    (quote
-    (material-theme company-go ace-window go-mode projectile rainbow-delimiters restart-emacs git-gutter vi-tilde-fringe flycheck flycheck-pos-tip neotree indium js2-mode js2-refactor json-mode magit web-mode company-tern company-web company rainbow-mode yasnippet undo-tree surround monokai-alt-theme color-theme-sanityinc-solarized ag abyss-theme)))
+    (gitconfig-mode github-modern-theme haskell-mode ghc base16-theme prettier-js osx-dictionary material-theme company-go ace-window go-mode projectile rainbow-delimiters restart-emacs git-gutter vi-tilde-fringe flycheck flycheck-pos-tip neotree indium js2-mode js2-refactor json-mode magit web-mode company-tern company-web company rainbow-mode yasnippet undo-tree surround monokai-alt-theme color-theme-sanityinc-solarized ag abyss-theme)))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
