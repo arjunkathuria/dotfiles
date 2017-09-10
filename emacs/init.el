@@ -58,14 +58,27 @@
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
 ;;-------------------
 
 ;; web-mode config
+
 (setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-code-indent-offset 2)
   (setq js-indent-level 2)
+
 ;;---------------------
+
+;; Emmet settings
+
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation
+(setq emmet-expand-jsx-className? t)
+(setq emmet-self-closing-tag-style " /")
+
+;;---------------------
+
 
 ;; GLOBAL enabled modes and hooks
 (require 'flycheck)
@@ -85,7 +98,6 @@
 (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
 
 
-
 ;; Neotree configurations
 (global-set-key [f8] 'neotree-toggle)
 
@@ -95,6 +107,7 @@
 (electric-pair-mode 1)
 (setq electric-pair-pairs '(
                             (?\" . ?\")
+                            (?\' . ?\')
                             (?\` . ?\`)
                             (?\( . ?\))
                             (?\{ . ?\})
@@ -121,7 +134,7 @@
  '(ido-mode (quote both) nil (ido))
  '(package-selected-packages
    (quote
-    (gitconfig-mode github-modern-theme haskell-mode ghc base16-theme prettier-js osx-dictionary material-theme company-go ace-window go-mode projectile rainbow-delimiters restart-emacs git-gutter vi-tilde-fringe flycheck flycheck-pos-tip neotree indium js2-mode js2-refactor json-mode magit web-mode company-tern company-web company rainbow-mode yasnippet undo-tree surround monokai-alt-theme color-theme-sanityinc-solarized ag abyss-theme)))
+    (rjsx-mode emmet-mode gitconfig-mode github-modern-theme haskell-mode ghc base16-theme prettier-js osx-dictionary material-theme company-go ace-window go-mode projectile rainbow-delimiters restart-emacs git-gutter vi-tilde-fringe flycheck flycheck-pos-tip neotree indium js2-mode js2-refactor json-mode magit web-mode company-tern company-web company rainbow-mode yasnippet undo-tree surround monokai-alt-theme color-theme-sanityinc-solarized ag abyss-theme)))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
