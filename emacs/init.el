@@ -65,8 +65,11 @@
 
 (setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
-        web-mode-code-indent-offset 2)
-  (setq js-indent-level 2)
+        web-mode-code-indent-offset 2) ; web-mode
+(setq js-indent-level 2)
+(setq js2-basic-offset 2) ; js2-mode
+(setq css-indent-offset 2) ; css-mode
+
 
 ;;---------------------
 
@@ -126,6 +129,7 @@
  '(custom-safe-themes
    (quote
     ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "5a7830712d709a4fc128a7998b7fa963f37e960fd2e8aa75c76f692b36e6cf3c" "aea30125ef2e48831f46695418677b9d676c3babf43959c8e978c0ad672a7329" default)))
+ '(emmet-indentation 2)
  '(fci-rule-color "#373b41")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(global-subword-mode t)
