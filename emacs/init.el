@@ -106,6 +106,26 @@
 
 ;;-----------------------
 
+;; Company mode Configs;
+(require 'company)
+(require 'company-web-html)                          ; load company mode html backend
+(add-to-list 'company-backends 'company-tern)
+
+(setq company-tooltip-limit 20)                      ; bigger popup window
+(setq company-tooltip-align-annotations 't)          ; align annotations to the right tooltip border
+(setq company-idle-delay .3)                         ; decrease delay before autocompletion popup shows
+(setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
+(global-set-key (kbd "C-c /") 'company-files)        ; Force complete file names on "C-c /" key
+;;-----------------------
+
+;; Emmet Mode Config
+(add-to-list 'load-path "~/emacs.d/emmet-mode")
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+
+;;-----------------------
+
 ;; electric pair mode
 (electric-pair-mode 1)
 (setq electric-pair-pairs '(
@@ -115,6 +135,24 @@
                             (?\( . ?\))
                             (?\{ . ?\})
                             ) )
+;; Ivy, counsel, swipper
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t
+      ivy-count-format "%d/%d ")
+(setq enable-recursive-minibuffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+;;------------------------
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -124,7 +162,12 @@
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-term-color-vector
-   [unspecified "#1e1e1e" "#cf6a4c" "#8f9d6a" "#f9ee98" "#7587a6" "#9b859d" "#7587a6" "#a7a7a7"] t)
+   [unspecified "#1b2b34" "#ec5f67" "#99c794" "#fac863" "#6699cc" "#c594c5" "#6699cc" "#c0c5ce"] t)
+ '(company-backends
+   (quote
+    (company-tern company-bbdb company-nxml company-css company-eclim company-semantic company-clang company-xcode company-cmake company-capf company-files
+                  (company-dabbrev-code company-gtags company-etags company-keywords)
+                  company-oddmuse company-dabbrev company-ispell)))
  '(custom-enabled-themes (quote (base16-oceanicnext)))
  '(custom-safe-themes
    (quote
@@ -138,7 +181,8 @@
  '(ido-mode (quote both) nil (ido))
  '(package-selected-packages
    (quote
-    (rjsx-mode emmet-mode gitconfig-mode github-modern-theme haskell-mode ghc base16-theme prettier-js osx-dictionary material-theme company-go ace-window go-mode projectile rainbow-delimiters restart-emacs git-gutter vi-tilde-fringe flycheck flycheck-pos-tip neotree indium js2-mode js2-refactor json-mode magit web-mode company-tern company-web company rainbow-mode yasnippet undo-tree surround monokai-alt-theme color-theme-sanityinc-solarized ag abyss-theme)))
+    (counsel google-this gotham-theme govet darktooth-theme rjsx-mode emmet-mode gitconfig-mode github-modern-theme haskell-mode ghc base16-theme prettier-js osx-dictionary material-theme company-go ace-window go-mode projectile rainbow-delimiters restart-emacs git-gutter vi-tilde-fringe flycheck flycheck-pos-tip neotree indium js2-mode js2-refactor json-mode magit web-mode company-tern company-web company rainbow-mode yasnippet undo-tree surround monokai-alt-theme color-theme-sanityinc-solarized ag abyss-theme)))
+ '(sentence-end-double-space nil)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
