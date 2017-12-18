@@ -70,6 +70,13 @@
 (setq js2-basic-offset 2) ; js2-mode
 (setq css-indent-offset 2) ; css-mode
 
+;; Adds jsx support to web mode
+(defun my-load-jsx ()
+  (when (and (stringp buffer-file-name)
+         (string-match "\\.js\\'" buffer-file-name))
+        (web-mode-set-content-type "jsx")))
+
+(add-hook 'find-file-hook #'my-load-jsx)
 
 ;;---------------------
 
