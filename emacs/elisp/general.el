@@ -43,4 +43,10 @@
 
 ;;-------------------
 
+;; Font settings
+(if (eq system-type 'darwin)
+    ;;(set-face-attribute 'default nil :font "Operator Mono-13")
+    ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono")
+    (set-face-attribute 'default nil :font "Hack-12"))
+
 (provide 'general)
