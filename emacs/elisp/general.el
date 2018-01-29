@@ -20,6 +20,7 @@
 ;; Mp M-o to switch windows
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-O") 'universal-argument)
+(global-set-key (kbd "M-i") 'imenu)
 
 ;; GLOBAL enabled modes and hooks
 ;;(require 'flycheck)
