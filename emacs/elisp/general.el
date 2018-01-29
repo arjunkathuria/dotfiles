@@ -17,10 +17,17 @@
 ;;Relevant Apropos
 (setq apropos-sort-by-scores t)
 
-;; Mp M-o to switch windows
+;; KEYMAPS
+
+;; Map M-o to switch windows
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-O") 'universal-argument)
+
+;; Maps M-i to imenu
 (global-set-key (kbd "M-i") 'imenu)
+
+;;----------------------
+
 
 ;; GLOBAL enabled modes and hooks
 ;;(require 'flycheck)
