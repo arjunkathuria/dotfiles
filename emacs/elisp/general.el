@@ -57,4 +57,7 @@
     ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono")
     (set-face-attribute 'default nil :font "Hack-12"))
 
+;; Removes the side-scrollbars from emacs
+(scroll-bar-mode -1)
+
 (provide 'general)
