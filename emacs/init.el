@@ -5,10 +5,10 @@
 
 (require 'package)
 
-(setq package-archives '(("org"       . "https://orgmode.org/elpa/")
-                         ("gnu"       . "https://elpa.gnu.org/packages/")
-                         ("melpa"     . "https://melpa.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")))
+(setq package-archives '(("org"       . "http://orgmode.org/elpa/")
+                         ("gnu"       . "http://elpa.gnu.org/packages/")
+                         ("melpa"     . "http://melpa.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 (package-initialize)
 
@@ -30,7 +30,6 @@
 (require 'setup-counsel)
 (require 'setup-prettier)
 (require 'setup-alchemist)
-(require 'setup-bm)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -51,7 +50,7 @@
  '(hl-sexp-background-color "#1c1f26")
  '(package-selected-packages
    (quote
-    (bm markdown-mode arjen-grey-theme flyspell-popup gruvbox-theme flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe use-package undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters projectile prettier-js osx-dictionary neotree monokai-alt-theme material-theme magit json-mode js2-refactor indium govet gotham-theme google-this github-modern-theme gitconfig-mode git-gutter ghc flycheck-pos-tip emmet-mode darktooth-theme counsel company-web company-tern company-go color-theme-sanityinc-solarized base16-theme ag ace-window abyss-theme)))
+    (bm which-key markdown-mode arjen-grey-theme flyspell-popup gruvbox-theme flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe use-package undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters projectile prettier-js osx-dictionary neotree monokai-alt-theme material-theme magit json-mode js2-refactor indium govet gotham-theme google-this github-modern-theme gitconfig-mode git-gutter ghc flycheck-pos-tip emmet-mode darktooth-theme counsel company-web company-tern company-go color-theme-sanityinc-solarized base16-theme ag ace-window abyss-theme)))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
