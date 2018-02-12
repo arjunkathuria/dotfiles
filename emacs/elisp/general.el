@@ -60,4 +60,15 @@
 ;; Removes the side-scrollbars from emacs
 (scroll-bar-mode -1)
 
+;; Indent settings
+
+(setq web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2) ; web-mode
+(setq js-indent-level 2)
+(setq js2-basic-offset 2) ; js2-mode
+(setq css-indent-offset 2) ; css-mode
+;;----------------------
+
+
 (provide 'general)
