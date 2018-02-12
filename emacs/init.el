@@ -30,7 +30,8 @@
 (require 'setup-counsel)
 (require 'setup-prettier)
 (require 'setup-alchemist)
-(require 'bm-setup)
+(require 'setup-bm)
+(require 'setup-whichkey)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
