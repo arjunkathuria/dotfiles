@@ -19,6 +19,7 @@
 
 ;; KEYMAPS
 
+
 ;; Map M-o to switch windows
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-O") 'universal-argument)
@@ -32,7 +33,7 @@
 ;; GLOBAL enabled modes and hooks
 ;;(require 'flycheck)
 
-(add-hook 'after-init-hook 'global-company-mode)
+;;(add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
@@ -59,16 +60,5 @@
 
 ;; Removes the side-scrollbars from emacs
 (scroll-bar-mode -1)
-
-;; Indent settings
-
-(setq web-mode-markup-indent-offset 2
-        web-mode-css-indent-offset 2
-        web-mode-code-indent-offset 2) ; web-mode
-(setq js-indent-level 2)
-(setq js2-basic-offset 2) ; js2-mode
-(setq css-indent-offset 2) ; css-mode
-;;----------------------
-
 
 (provide 'general)
