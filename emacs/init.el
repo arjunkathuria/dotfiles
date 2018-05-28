@@ -25,6 +25,7 @@
 (require 'general)
 
 (require 'setup-emmet)
+(require 'setup-company)
 (require 'setup-web-mode)
 (require 'setup-electric-pair-mode)
 (require 'setup-counsel)
@@ -44,15 +45,23 @@
    (vector "#ffffff" "#f36c60" "#8bc34a" "#fff59d" "#4dd0e1" "#b39ddb" "#81d4fa" "#263238"))
  '(ansi-term-color-vector
    [unspecified "#151515" "#ff0086" "#00c918" "#aba800" "#3777e6" "#ad00a1" "#3777e6" "#d0d0d0"] t)
+ '(beacon-color "#ff9da4")
  '(custom-enabled-themes (quote (base16-oceanicnext)))
  '(custom-safe-themes
    (quote
-    ("5a7830712d709a4fc128a7998b7fa963f37e960fd2e8aa75c76f692b36e6cf3c" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default)))
+    ("e0d42a58c84161a0744ceab595370cbe290949968ab62273aed6212df0ea94b4" "7527f3308a83721f9b6d50a36698baaedc79ded9f6d5bd4e9a28a22ab13b3cb1" "5a7830712d709a4fc128a7998b7fa963f37e960fd2e8aa75c76f692b36e6cf3c" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default)))
  '(fci-rule-color "#37474f")
+ '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
+ '(frame-background-mode (quote dark))
+ '(hl-paren-colors
+   (quote
+    ("#B9F" "#B8D" "#B7B" "#B69" "#B57" "#B45" "#B33" "#B11")))
  '(hl-sexp-background-color "#1c1f26")
+ '(linum-format " %7i ")
  '(package-selected-packages
    (quote
-    (bm which-key markdown-mode arjen-grey-theme flyspell-popup gruvbox-theme flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe use-package undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters projectile prettier-js osx-dictionary neotree monokai-alt-theme material-theme magit json-mode js2-refactor indium govet gotham-theme google-this github-modern-theme gitconfig-mode git-gutter ghc flycheck-pos-tip emmet-mode darktooth-theme counsel company-web company-tern company-go color-theme-sanityinc-solarized base16-theme ag ace-window abyss-theme)))
+    (lorem-ipsum sublime-themes company-irony irony cmake-ide cmake-mode company-c-headers company-rtags rtags edts nordless-theme color-theme-sanityinc-tomorrow company-erlang spacegray-theme overcast-theme dad-joke danneskjold-theme nord-theme erlang bm which-key markdown-mode arjen-grey-theme flyspell-popup flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe use-package undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters projectile prettier-js osx-dictionary neotree monokai-alt-theme material-theme magit json-mode js2-refactor indium govet gotham-theme google-this github-modern-theme gitconfig-mode git-gutter ghc flycheck-pos-tip emmet-mode counsel company-web company-tern company-go color-theme-sanityinc-solarized base16-theme ag ace-window)))
+ '(tramp-syntax (quote default) nil (tramp))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -81,3 +90,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'downcase-region 'disabled nil)
