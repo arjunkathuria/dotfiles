@@ -9,7 +9,8 @@
   (setq enable-recursive-minibuffers t)
   :bind
   (
-   ;; ("C-s" . 'swiper)
+;; ("C-s" . 'swiper)
+   ("C-'" . 'swiper-avy)
    ("C-c C-r" . 'ivy-resume)
    ("M-x" . 'counsel-M-x)
    ("C-x C-f" . 'counsel-find-file)
