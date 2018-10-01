@@ -33,6 +33,8 @@
 (require 'setup-alchemist)
 (require 'setup-bm)
 (require 'setup-whichkey)
+(require 'setup-flycheck)
+(require 'setup-sml)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -48,7 +50,7 @@
  '(beacon-color "#ff9da4")
  '(custom-enabled-themes '(base16-oceanicnext))
  '(custom-safe-themes
-   '("e0d42a58c84161a0744ceab595370cbe290949968ab62273aed6212df0ea94b4" "7527f3308a83721f9b6d50a36698baaedc79ded9f6d5bd4e9a28a22ab13b3cb1" "5a7830712d709a4fc128a7998b7fa963f37e960fd2e8aa75c76f692b36e6cf3c" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default))
+   '("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "e0d42a58c84161a0744ceab595370cbe290949968ab62273aed6212df0ea94b4" "7527f3308a83721f9b6d50a36698baaedc79ded9f6d5bd4e9a28a22ab13b3cb1" "5a7830712d709a4fc128a7998b7fa963f37e960fd2e8aa75c76f692b36e6cf3c" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default))
  '(fci-rule-color "#37474f")
  '(flycheck-color-mode-line-face-to-color 'mode-line-buffer-id)
  '(frame-background-mode 'dark)
@@ -56,7 +58,7 @@
  '(hl-sexp-background-color "#1c1f26")
  '(linum-format " %7i ")
  '(package-selected-packages
-   '(all-the-icons-dired all-the-icons-ivy whole-line-or-region lorem-ipsum sublime-themes company-irony irony cmake-ide cmake-mode company-c-headers company-rtags rtags edts nordless-theme color-theme-sanityinc-tomorrow company-erlang spacegray-theme overcast-theme dad-joke danneskjold-theme nord-theme erlang bm which-key markdown-mode arjen-grey-theme flyspell-popup flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe use-package undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters projectile prettier-js osx-dictionary neotree monokai-alt-theme material-theme magit json-mode js2-refactor indium govet gotham-theme google-this github-modern-theme gitconfig-mode git-gutter ghc flycheck-pos-tip emmet-mode counsel company-web company-tern company-go color-theme-sanityinc-solarized base16-theme ag ace-window))
+   '(sml smart-mode-line exec-path-from-shell all-the-icons-dired all-the-icons-ivy whole-line-or-region lorem-ipsum sublime-themes company-irony irony cmake-ide cmake-mode company-c-headers company-rtags rtags edts nordless-theme color-theme-sanityinc-tomorrow company-erlang spacegray-theme overcast-theme dad-joke danneskjold-theme nord-theme erlang bm which-key markdown-mode arjen-grey-theme flyspell-popup flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe use-package undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters projectile prettier-js osx-dictionary neotree monokai-alt-theme material-theme magit json-mode js2-refactor indium govet gotham-theme google-this github-modern-theme gitconfig-mode git-gutter ghc flycheck-pos-tip emmet-mode counsel company-web company-tern company-go color-theme-sanityinc-solarized base16-theme ag ace-window))
  '(tramp-syntax 'default nil (tramp))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
