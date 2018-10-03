@@ -34,7 +34,7 @@
 (require 'setup-bm)
 (require 'setup-whichkey)
 (require 'setup-flycheck)
-(require 'setup-sml)
+(require 'setup-ace-window)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -58,7 +58,7 @@
  '(hl-sexp-background-color "#1c1f26")
  '(linum-format " %7i ")
  '(package-selected-packages
-   '(sml smart-mode-line exec-path-from-shell all-the-icons-dired all-the-icons-ivy whole-line-or-region lorem-ipsum sublime-themes company-irony irony cmake-ide cmake-mode company-c-headers company-rtags rtags edts nordless-theme color-theme-sanityinc-tomorrow company-erlang spacegray-theme overcast-theme dad-joke danneskjold-theme nord-theme erlang bm which-key markdown-mode arjen-grey-theme flyspell-popup flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe use-package undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters projectile prettier-js osx-dictionary neotree monokai-alt-theme material-theme magit json-mode js2-refactor indium govet gotham-theme google-this github-modern-theme gitconfig-mode git-gutter ghc flycheck-pos-tip emmet-mode counsel company-web company-tern company-go color-theme-sanityinc-solarized base16-theme ag ace-window))
+   '(dashboard spacemacs-theme exec-path-from-shell whole-line-or-region lorem-ipsum company-irony irony cmake-ide cmake-mode company-c-headers company-rtags rtags edts nordless-theme color-theme-sanityinc-tomorrow company-erlang spacegray-theme overcast-theme dad-joke danneskjold-theme nord-theme erlang bm which-key markdown-mode arjen-grey-theme flyspell-popup flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe use-package undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters projectile prettier-js osx-dictionary neotree monokai-alt-theme material-theme magit json-mode js2-refactor github-modern-theme gitconfig-mode git-gutter flycheck-pos-tip emmet-mode counsel company-web company-tern color-theme-sanityinc-solarized base16-theme ag ace-window))
  '(tramp-syntax 'default nil (tramp))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
