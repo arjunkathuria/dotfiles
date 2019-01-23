@@ -43,6 +43,18 @@
     :ensure t
     :config
     (add-hook 'after-init-hook 'company-statistics-mode))
+
+  (use-package jedi
+  :ensure t
+  :init
+  (add-to-list 'company-backends 'company-jedi)
+  :config
+  (use-package company-jedi
+    :ensure t
+    :init
+    (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi)))
+    (setq company-jedi-python-bin "python3")))
+  
   )
 
 (provide 'setup-company)
