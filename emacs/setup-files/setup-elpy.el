@@ -1,4 +1,4 @@
-;; Configuration for elpy
+;; Configuration for smart-mode-line
 
 ;;; Code:
 
@@ -11,11 +11,8 @@
     (elpy-enable)
     ;; jedi is great
     (setq elpy-rpc-backend "jedi")
-    (setq highlight-indent-guides-method 'character)
-    (electric-indent-local-mode -1)
-    ;; indent guides from elpy weren't really working for me so,
+    ;(electric-indent-local-mode -1)
     (delete 'elpy-module-highlight-indentation elpy-modules)
-    ;; switch off flymake for flycheck
     (delete 'elpy-module-flymake elpy-modules)
   )
 
