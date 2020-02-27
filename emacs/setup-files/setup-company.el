@@ -5,12 +5,17 @@
   :ensure t
   ;; (add-hook 'prog-mode-hook 'company-mode)
   ;; (add-hook 'comint-mode-hook 'company-mode)
+
+  :bind
+  ("C-c C-SPC" . 'company-complete)
   
   :init
   (global-company-mode)
+
+  :config
   (setq company-tooltip-limit 10)
   (setq company-dabbrev-downcase 0)
-  (setq company-idle-delay 0)
+  (setq company-idle-delay 0.2)
   (setq company-echo-delay 0)
   (setq company-minimum-prefix-length 2)
   (setq company-require-match nil)
@@ -30,36 +35,38 @@
 
   (use-package company-web
     :ensure t
+    :hook (web-mode)
     :bind (("C-c w" . company-web-html))
     :config
     (add-to-list 'company-backends 'company-web-html))
 
-  (use-package company-rtags
+  (use-package company-lsp
+    :ensure t
     :defer t
     :config
-    (add-to-list 'company-backends 'company-rtags))
+    (add-to-list 'company-backends 'company-lsp))
 
-  (use-package company-c-headers
-    :defer t
-    :config
-    (add-to-list 'company-backends 'company-c-headers))
+  ;; (use-package company-rtags
+  ;;   :defer t
+  ;;   :config
+  ;;   (add-to-list 'company-backends 'company-rtags))
+
+  ;; (use-package company-c-headers
+  ;;   :defer t
+  ;;   :config
+  ;;   (add-to-list 'company-backends 'company-c-headers))
   
   (use-package company-statistics
     :ensure t
     :config
     (add-hook 'after-init-hook 'company-statistics-mode))
 
-  (use-package jedi
-  :ensure t
-  :init
-  (add-to-list 'company-backends 'company-jedi)
-  :config
   (use-package company-jedi
     :ensure t
     :init
     (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi)))
-    (setq company-jedi-python-bin "python3")))
-  
+    (setq company-jedi-python-bin "python3")
+    (setq python-shell-interpreter "python3"))
   )
 
 (provide 'setup-company)
