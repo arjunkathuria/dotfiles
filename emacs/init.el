@@ -29,8 +29,6 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/")
 (add-to-list 'load-path "~/.emacs.d/setup-files/")
 
-;; GENERAL SETUP
-(require 'general-emacs-setup)
 
 ;; REQUIRED PACKAGES
 
@@ -50,7 +48,7 @@
 (require 'setup-bm)
 (require 'setup-whitespace-cleanup)
 ;;(require 'setup-alchemist)
-(require 'setup-slime)
+;;(require 'setup-slime)
 (require 'setup-elpy)
 (require 'setup-lsp)
 (require 'setup-all-the-icons)
@@ -59,7 +57,8 @@
 ;; OPTIONAL PACKAGES, chose to load on convenience
 ;; these packages result in things mostly cosmetic.
 
-
+;; GENERAL SETUP
+(require 'general-emacs-setup)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
