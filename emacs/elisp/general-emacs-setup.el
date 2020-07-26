@@ -64,4 +64,4 @@
 ;; Disable the annoying splash screen (to enable it agin, replace the t with 0)
 (setq inhibit-splash-screen t)
 
-(provide 'general)
+(provide 'general-emacs-setup)
