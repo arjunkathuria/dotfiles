@@ -16,3 +16,5 @@
 [core]
 	pager = less -RFX
 	editor = emacs -nw
+[status]
+	showUntrackedFiles = all
