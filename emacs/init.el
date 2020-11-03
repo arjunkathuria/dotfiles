@@ -40,7 +40,8 @@
 (require 'setup-prettier)
 
 (require 'setup-flycheck)
-(require 'setup-sml)
+;; (require 'setup-sml)
+(require 'setup-all-the-icons)
 (require 'setup-neotree)
 (require 'setup-ace-window)
 (require 'setup-whichkey)
@@ -50,7 +51,6 @@
 ;;(require 'setup-slime)
 (require 'setup-elpy)
 (require 'setup-lsp)
-(require 'setup-all-the-icons)
 (require 'setup-haskell)
 
 ;; OPTIONAL PACKAGES, chose to load on convenience
@@ -71,37 +71,32 @@
  '(ansi-term-color-vector
    [unspecified "#151515" "#ff0086" "#00c918" "#aba800" "#3777e6" "#ad00a1" "#3777e6" "#d0d0d0"] t)
  '(beacon-color "#ff9da4")
- '(custom-enabled-themes (quote (base16-snazzy)))
+ '(custom-enabled-themes '(base16-snazzy))
  '(custom-safe-themes
-   (quote
-    ("7220c44ef252ec651491125f1d95ad555fdfdc88f872d3552766862d63454582" "d5e13e2100e2a1167cd521558c5344809c154cc211ccd39a9c06bb83d254927c" "be9645aaa8c11f76a10bcf36aaf83f54f4587ced1b9b679b55639c87404e2499" "bc99493670a29023f99e88054c9b8676332dda83a37adb583d6f1e4c13be62b8" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "e0d42a58c84161a0744ceab595370cbe290949968ab62273aed6212df0ea94b4" "7527f3308a83721f9b6d50a36698baaedc79ded9f6d5bd4e9a28a22ab13b3cb1" "5a7830712d709a4fc128a7998b7fa963f37e960fd2e8aa75c76f692b36e6cf3c" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default)))
- '(ebal-operation-mode (quote stack))
+   '("7220c44ef252ec651491125f1d95ad555fdfdc88f872d3552766862d63454582" "d5e13e2100e2a1167cd521558c5344809c154cc211ccd39a9c06bb83d254927c" "be9645aaa8c11f76a10bcf36aaf83f54f4587ced1b9b679b55639c87404e2499" "bc99493670a29023f99e88054c9b8676332dda83a37adb583d6f1e4c13be62b8" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "e0d42a58c84161a0744ceab595370cbe290949968ab62273aed6212df0ea94b4" "7527f3308a83721f9b6d50a36698baaedc79ded9f6d5bd4e9a28a22ab13b3cb1" "5a7830712d709a4fc128a7998b7fa963f37e960fd2e8aa75c76f692b36e6cf3c" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default))
+ '(ebal-operation-mode 'stack)
  '(elpy-rpc-backend "jedi" t)
  '(fci-rule-color "#37474f")
- '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
- '(flycheck-disabled-checkers (quote (json-jsonlist haskell-stack-ghc)))
+ '(flycheck-color-mode-line-face-to-color 'mode-line-buffer-id)
+ '(flycheck-disabled-checkers '(json-jsonlist haskell-stack-ghc))
  '(flycheck-python-flake8-executable "python3")
- '(frame-background-mode (quote dark))
- '(hl-paren-colors
-   (quote
-    ("#B9F" "#B8D" "#B7B" "#B69" "#B57" "#B45" "#B33" "#B11")))
+ '(frame-background-mode 'dark)
+ '(hl-paren-colors '("#B9F" "#B8D" "#B7B" "#B69" "#B57" "#B45" "#B33" "#B11"))
  '(hl-sexp-background-color "#1c1f26")
- '(ivy-posframe-style (quote frame-top-center))
+ '(ivy-posframe-style 'frame-top-center)
  '(jdee-db-active-breakpoint-face-colors (cons "#222228" "#819cd6"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#222228" "#5b94ab"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#222228" "#515462"))
  '(linum-format " %7i ")
  '(objed-cursor-color "#e1c1ee")
  '(package-selected-packages
-   (quote
-    (lsp-ui-mode lsp-mode immaterial-theme string-inflection paredit all-the-icons-dired all-the-icons-ibuffer ebal lsp-haskell all-the-icons-ivy-rich use-package lsp-ui company-statistics company-c-headers company-rtags company-lsp flycheck-haskell haskell-mode elpy pipenv company-jedi all-the-icons-ivy slime-company brutalist-theme nofrils-acme-theme all-the-icons dashboard exec-path-from-shell whole-line-or-region lorem-ipsum company-irony irony edts nordless-theme color-theme-sanityinc-tomorrow company-erlang spacegray-theme overcast-theme dad-joke danneskjold-theme nord-theme erlang bm markdown-mode arjen-grey-theme flyspell-popup flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters prettier-js osx-dictionary neotree material-theme magit json-mode js2-refactor gitconfig-mode git-gutter flycheck-pos-tip emmet-mode counsel company-web company-tern color-theme-sanityinc-solarized base16-theme ag ace-window)))
+   '(lsp-ui-mode lsp-mode immaterial-theme string-inflection paredit all-the-icons-dired all-the-icons-ibuffer ebal lsp-haskell all-the-icons-ivy-rich use-package lsp-ui company-statistics company-c-headers company-rtags company-lsp flycheck-haskell haskell-mode elpy pipenv company-jedi all-the-icons-ivy slime-company brutalist-theme nofrils-acme-theme all-the-icons dashboard exec-path-from-shell whole-line-or-region lorem-ipsum company-irony irony edts nordless-theme color-theme-sanityinc-tomorrow company-erlang spacegray-theme overcast-theme dad-joke danneskjold-theme nord-theme erlang bm markdown-mode arjen-grey-theme flyspell-popup flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters prettier-js osx-dictionary neotree material-theme magit json-mode js2-refactor gitconfig-mode git-gutter flycheck-pos-tip emmet-mode counsel company-web company-tern color-theme-sanityinc-solarized base16-theme ag ace-window))
  '(pdf-view-midnight-colors (cons "#c6c6c6" "#282b33"))
  '(python-shell-interpreter "python3" t)
- '(tramp-syntax (quote default) nil (tramp))
+ '(tramp-syntax 'default nil (tramp))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
-   (quote
-    ((20 . "#f36c60")
+   '((20 . "#f36c60")
      (40 . "#ff9800")
      (60 . "#fff59d")
      (80 . "#8bc34a")
@@ -118,7 +113,7 @@
      (300 . "#f36c60")
      (320 . "#ff9800")
      (340 . "#fff59d")
-     (360 . "#8bc34a"))))
+     (360 . "#8bc34a")))
  '(vc-annotate-very-old-color nil)
  '(window-divider-mode nil))
 (custom-set-faces
