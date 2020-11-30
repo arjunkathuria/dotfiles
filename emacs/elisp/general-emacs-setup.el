@@ -16,17 +16,6 @@
 
 ;;Relevant Apropos
 (setq apropos-sort-by-scores t)
-
-;; KEYMAPS
-
-
-;; Map M-o to switch windows
-(global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "M-O") 'universal-argument)
-
-;; Maps M-i to imenu
-(global-set-key (kbd "M-i") 'imenu)
-
 ;;----------------------
 
 
@@ -35,9 +24,22 @@
 
 ;;(add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-init-hook 'global-flycheck-mode)
-(add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+;; The VI like fringes in sidebar
+(use-package vi-tilde-fringe
+  :ensure t
+  :hook
+  (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
+  )
+
+;; Rainbow colored brackets
+(use-package rainbow-delimiters
+  :ensure t
+  :hook
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+  )
+
 ;;----------------------
 
 ;; CUSTOM MAJOR MODES
@@ -58,10 +60,17 @@
     ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono")
     (set-face-attribute 'default nil :font "Hack-12"))
 
+(set-face-attribute 'default nil :font "Hack-12")
+;;(set-face-attribute 'default nil :font "Hack-16")
+
 ;; Removes the side-scrollbars from emacs
 (scroll-bar-mode -1)
-
+(tool-bar-mode -1)
 ;; Disable the annoying splash screen (to enable it agin, replace the t with 0)
-(setq inhibit-splash-screen t)
+(setq inhibit-splash-screen nil)
 
+(column-number-mode t)
+(line-number-mode t)
+
+(require 'keymaps)
 (provide 'general-emacs-setup)
