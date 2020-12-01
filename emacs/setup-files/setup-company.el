@@ -40,11 +40,11 @@
     :config
     (add-to-list 'company-backends 'company-web-html))
 
-  ;; (use-package company-lsp
-  ;;   :ensure t
-  ;;   :defer t
-  ;;   :config
-  ;;   (add-to-list 'company-backends 'company-lsp))
+  (use-package company-lsp
+    :ensure t
+    :defer t
+    :config
+    (add-to-list 'company-backends 'company-lsp))
 
   ;; (use-package company-rtags
   ;;   :defer t
