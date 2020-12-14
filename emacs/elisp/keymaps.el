@@ -18,4 +18,9 @@
 (global-set-key (kbd "C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "C-<right>") 'enlarge-window-horizontally)
 
+(use-package transpose-frame
+  :ensure t
+  :bind
+  ("C-c f t" . 'transpose-frame))
+
 (provide 'keymaps)
