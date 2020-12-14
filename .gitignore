@@ -2,3 +2,10 @@
 *~
 *#*#
 *.#init
+
+emacs/elpa/*
+emacs/.cache/*
+old-emacs/*
+/emacs/allicons/*.ttf
+/emacs/session.101c3d5833fe96e4f7160684705545675500000026910089
+/emacs/session.109c9c70cb209bc56d160682788063382400000259330087
