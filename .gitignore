@@ -9,3 +9,4 @@ old-emacs/*
 /emacs/allicons/*.ttf
 /emacs/session*
 
+/emacs/diary
