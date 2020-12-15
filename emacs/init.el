@@ -55,6 +55,8 @@
 (require 'setup-nim)
 (require 'setup-nov)
 (require 'setup-magit)
+(require 'setup-org)
+(require 'setup-pdf)
 
 ;; OPTIONAL PACKAGES, chose to load on convenience
 ;; these packages result in things mostly cosmetic.
@@ -84,16 +86,26 @@
  '(flycheck-disabled-checkers '(json-jsonlist haskell-stack-ghc))
  '(flycheck-python-flake8-executable "python3")
  '(frame-background-mode 'dark)
- '(highlight-indentation-offset 2)
  '(hl-paren-colors '("#B9F" "#B8D" "#B7B" "#B69" "#B57" "#B45" "#B33" "#B11"))
  '(hl-sexp-background-color "#1c1f26")
  '(jdee-db-active-breakpoint-face-colors (cons "#222228" "#819cd6"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#222228" "#5b94ab"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#222228" "#515462"))
  '(linum-format " %7i ")
+ '(nil nil t)
  '(objed-cursor-color "#e1c1ee")
+ '(org-agenda-files
+   '("d:/orgfiles/December/week_2/09-12-2020.org" "d:/orgfiles/December/week_2/08-12-2020.org" "d:/orgfiles/December/week_2/07-12-2020.org" "d:/orgfiles/December/week_2/week_50.org" "d:/orgfiles/December/week_1/05-12-2020.org" "d:/orgfiles/December/week_1/04-12-2020.org" "d:/orgfiles/December/week_1/03-12-2020.org"))
+ '(org-confirm-babel-evaluate nil)
+ '(org-default-notes-file (concat org-directory "/notes.org"))
+ '(org-directory "D:/orgfiles")
+ '(org-export-html-postamble nil)
+ '(org-hide-leading-stars t)
+ '(org-src-fontify-natively t)
+ '(org-startup-folded 'overview)
+ '(org-startup-indented t)
  '(package-selected-packages
-   '(vterm vterm-toggle indent-guide dictionary define-word define-it rainbow-delimiters-mode vi-tilde-fringe-mode circe nov pdf-tools pdf-view-restore pdfgrep suggestion-box metronome kaolin-themes green-is-the-new-black-theme transpose-frame nim-mode lsp-ui-mode lsp-mode immaterial-theme string-inflection paredit all-the-icons-dired all-the-icons-ibuffer ebal lsp-haskell all-the-icons-ivy-rich use-package lsp-ui company-statistics company-c-headers company-rtags company-lsp flycheck-haskell haskell-mode elpy pipenv company-jedi all-the-icons-ivy slime-company brutalist-theme nofrils-acme-theme all-the-icons dashboard exec-path-from-shell whole-line-or-region lorem-ipsum company-irony irony edts nordless-theme color-theme-sanityinc-tomorrow company-erlang spacegray-theme overcast-theme dad-joke danneskjold-theme nord-theme erlang bm markdown-mode arjen-grey-theme flyspell-popup flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters prettier-js osx-dictionary neotree material-theme magit json-mode js2-refactor gitconfig-mode git-gutter flycheck-pos-tip emmet-mode counsel company-web company-tern color-theme-sanityinc-solarized base16-theme ag ace-window))
+   '(define-it org-alert org-link-beautify define-word ivy-rich saveplace-pdf-view org-noter-pdftools undersea-theme org-pdftools org-pdfview org-bullets rainbow-delimiters-mode vi-tilde-fringe-mode circe nov pdf-tools pdf-view-restore pdfgrep suggestion-box metronome kaolin-themes green-is-the-new-black-theme transpose-frame nim-mode lsp-ui-mode lsp-mode immaterial-theme string-inflection paredit all-the-icons-dired all-the-icons-ibuffer ebal lsp-haskell all-the-icons-ivy-rich use-package lsp-ui company-statistics company-c-headers company-rtags company-lsp flycheck-haskell haskell-mode elpy pipenv company-jedi all-the-icons-ivy slime-company brutalist-theme nofrils-acme-theme all-the-icons dashboard exec-path-from-shell whole-line-or-region lorem-ipsum company-irony irony edts nordless-theme color-theme-sanityinc-tomorrow company-erlang spacegray-theme overcast-theme dad-joke danneskjold-theme nord-theme erlang bm markdown-mode arjen-grey-theme flyspell-popup flycheck-elixir alchemist elixir-mode web-mode vi-tilde-fringe undo-tree surround rjsx-mode restart-emacs rainbow-mode rainbow-delimiters prettier-js osx-dictionary neotree material-theme magit json-mode js2-refactor gitconfig-mode git-gutter flycheck-pos-tip emmet-mode counsel company-web company-tern color-theme-sanityinc-solarized base16-theme ag ace-window))
  '(pdf-view-midnight-colors (cons "#c6c6c6" "#282b33"))
  '(pos-tip-background-color "#DEDAD5")
  '(pos-tip-foreground-color "#4b5254")
@@ -126,5 +138,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background nil))))
- '(highlight-indentation-current-column-face ((t (:background "light coral")))))
+ '(default ((t (:background nil)))))
