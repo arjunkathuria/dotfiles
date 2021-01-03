@@ -4,9 +4,6 @@
 (setq-default indent-tabs-mode nil)
 (setq tab-width 2)
 
-;;undo-tree global
-(global-undo-tree-mode 1)
-
 ;;Fix the scrolling to keep point in the center:
 (setq scroll-conservatively 10000
       scroll-preserve-screen-position t)
@@ -17,7 +14,6 @@
 ;;Relevant Apropos
 (setq apropos-sort-by-scores t)
 ;;----------------------
-
 
 ;; GLOBAL enabled modes and hooks
 ;;(require 'flycheck)
@@ -31,14 +27,14 @@
   :ensure t
   :hook
   (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
-  )
+)
 
 ;; Rainbow colored brackets
 (use-package rainbow-delimiters
   :ensure t
   :hook
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-  )
+)
 
 ;;----------------------
 
@@ -60,8 +56,7 @@
     ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono")
     (set-face-attribute 'default nil :font "Hack-12"))
 
-(set-face-attribute 'default nil :font "Hack-12")
-;;(set-face-attribute 'default nil :font "Hack-16")
+;;(set-face-attribute 'default nil :font "Source-Code-Pro-12")
 
 ;; Removes the side-scrollbars from emacs
 (scroll-bar-mode -1)
