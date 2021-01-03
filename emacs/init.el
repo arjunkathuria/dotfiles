@@ -31,8 +31,8 @@
 
 ;; REQUIRED PACKAGES
 
+(require 'setup-undo-tree)
 (require 'setup-emmet)
-
 (require 'setup-company)
 (require 'setup-web-mode)
 (require 'setup-electric-pair-mode)
