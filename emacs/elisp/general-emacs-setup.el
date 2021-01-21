@@ -56,7 +56,7 @@
     ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono")
     (set-face-attribute 'default nil :font "Hack-12"))
 
-;;(set-face-attribute 'default nil :font "Source-Code-Pro-12")
+;;(set-face-attribute 'default nil :font "source code pro-12")
 
 ;; Removes the side-scrollbars from emacs
 (scroll-bar-mode -1)
@@ -66,6 +66,10 @@
 
 (column-number-mode t)
 (line-number-mode t)
+
+;; uniform encoding across systems.
+(set-language-environment "UTF-8")
+(set-buffer-file-coding-system 'utf-8-unix)
 
 (require 'keymaps)
 (provide 'general-emacs-setup)
