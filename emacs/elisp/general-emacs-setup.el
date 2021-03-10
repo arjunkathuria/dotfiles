@@ -56,7 +56,7 @@
     ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono")
     (set-face-attribute 'default nil :font "Hack-12"))
 
-;;(set-face-attribute 'default nil :font "source code pro-12")
+(set-face-attribute 'default nil :font "Hack-10")
 
 ;; Removes the side-scrollbars from emacs
 (scroll-bar-mode -1)
@@ -71,5 +71,13 @@
 (set-language-environment "UTF-8")
 (set-buffer-file-coding-system 'utf-8-unix)
 
+(setq make-backup-files nil)
+(setq create-lockfiles nil)
+(setq auto-save-default nil)
+
+;; windows set alt-gr (the right alt) as a normal alt.
+(setq w32-recognize-altgr nil)
+
 (require 'keymaps)
 (provide 'general-emacs-setup)
+;;; general-emacs-setup.el ends here
