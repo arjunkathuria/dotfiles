@@ -80,4 +80,8 @@
 
 (require 'keymaps)
 (provide 'general-emacs-setup)
+
+;; turn off backup files.
+(setq make-backup-files nil)
+
 ;;; general-emacs-setup.el ends here
