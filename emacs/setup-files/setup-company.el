@@ -67,6 +67,12 @@
     (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi)))
     (setq company-jedi-python-bin "python3")
     (setq python-shell-interpreter "python3"))
+
+  (add-hook 'haskell-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends)
+                 (append '((company-capf company-dabbrev-code))
+                         company-backends))))
   )
 
 (provide 'setup-company)
