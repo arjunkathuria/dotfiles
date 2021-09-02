@@ -62,10 +62,12 @@
 (require 'setup-org)
 (require 'setup-pdf)
 (require 'setup-irc)
-(require 'setup-theme)
 
 ;; ;; OPTIONAL PACKAGES, chose to load on convenience
 ;; ;; these packages result in things mostly cosmetic.
+
+(require 'setup-theme)
+(require 'setup-miniframe)
 
 ;; GENERAL SETUP
 (require 'general-emacs-setup)
