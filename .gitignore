@@ -10,3 +10,5 @@ old-emacs/*
 /emacs/session*
 
 /emacs/diary
+/emacs/eln-cache/*
+/emacs/*.ttf
