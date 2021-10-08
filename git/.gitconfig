@@ -18,3 +18,5 @@
 	editor = emacs -nw
 [status]
 	showUntrackedFiles = all
+[merge]
+	conflictStyle = diff3
