@@ -75,6 +75,7 @@
 ;; ;; these packages result in things mostly cosmetic.
 
 (require 'setup-theme)
+(require 'setup-consult)
 (require 'setup-miniframe)
 
 ;; GENERAL SETUP
