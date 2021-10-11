@@ -13,6 +13,14 @@
 
 (package-initialize)
 
+;;Initialize paths in GUI mode
+
+;; This sets $MANPATH, $PATH and exec-path from your shell,
+;; but only when executed in a GUI frame on OS X and Linux.
+(when (memq window-system '(mac ns x pgtk))
+  (exec-path-from-shell-initialize))
+
+
 ;; Bootstrap 'use-package'
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
