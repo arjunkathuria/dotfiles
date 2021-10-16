@@ -21,6 +21,6 @@
 (use-package transpose-frame
   :ensure t
   :bind
-  ("C-c C-c f t" . 'transpose-frame))
+  ("C-c t f" . 'transpose-frame))
 
 (provide 'keymaps)
