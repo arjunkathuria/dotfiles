@@ -3,6 +3,8 @@
 *#*#
 *.#init
 
+## emacs ignores 
+
 emacs/elpa/*
 emacs/.cache/*
 old-emacs/*
@@ -12,3 +14,4 @@ old-emacs/*
 /emacs/diary
 /emacs/eln-cache/*
 /emacs/*.ttf
+/emacs/url/cache/*
