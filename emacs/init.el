@@ -76,7 +76,8 @@
 
 (require 'setup-theme)
 (require 'setup-consult)
-(require 'setup-miniframe)
+;;(require 'setup-miniframe)
+(require 'setup-embark)
 
 ;; GENERAL SETUP
 (require 'general-emacs-setup)
