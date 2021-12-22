@@ -9,9 +9,16 @@
 
 ;; Orgmode.org/Elpa seems to be depreceated after 9.5, use regulat gnu org i guess ?
 ;; (add-to-list 'package-archives '("org"       . "https://orgmode.org/elpa/") t )
-(add-to-list 'package-archives '("melpa"     . "https://melpa.org/packages/") t )
+;; (add-to-list 'package-archives '("melpa"     . "https://melpa.org/packages/") t )
 
-(package-initialize)
+(setq package-archives
+      '(("gnu" . "https://elpa.gnu.org/packages/")
+        ;; ("gnu-devel" . "https://elpa.gnu.org/devel/")
+        ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+        ("melpa" . "https://melpa.org/packages/")))
+
+(when (< emacs-major-version 27)
+  (package-initialize))
 
 ;;Initialize paths in GUI mode
 
