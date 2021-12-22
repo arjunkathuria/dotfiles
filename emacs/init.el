@@ -25,8 +25,9 @@
 ;; This sets $MANPATH, $PATH and exec-path from your shell,
 ;; but only when executed in a GUI frame on OS X and Linux.
 (when (memq window-system '(mac ns x pgtk))
+  (unless (package-installed-p 'exec-path-from-shell)
+    (package-install 'exec-path-from-shell))
   (exec-path-from-shell-initialize))
-
 
 ;; Bootstrap 'use-package'
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
