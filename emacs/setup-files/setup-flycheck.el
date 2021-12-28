@@ -8,6 +8,4 @@
   (flycheck-haskell-ghc-executable "ghc")
   (flycheck-haskell-hlint-executable "hlint"))
 
-(require 'flycheck-clj-kondo)
-
 (provide 'setup-flycheck)
