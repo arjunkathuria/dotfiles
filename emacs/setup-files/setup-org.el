@@ -16,10 +16,10 @@
   org-directory ((if (eq system-type 'windows-nt)
                      ("D:/orgfiles"))
                  (if (eq system-type 'gnu/linux)
-                     ("~/orgfiles")))
+                     ("~/Documents/org")))
 
-   org-agenda-files (list org-directory)
-   org-default-notes-file (concat org-directory "/notes.org")
+   org-agenda-files (list (concat org-directory "/agenda/"))
+   org-default-notes-file (concat org-directory "/notes/notes.org")
    org-export-html-postamble nil
    org-hide-leading-stars t
    org-startup-folded (quote overview)
@@ -33,6 +33,10 @@
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(use-package ox-hugo
+  :ensure t            ;Auto-install the package from Melpa (optional)
+  :after ox)
 
 ;;(setenv "BROWSER" "firefox")
 
