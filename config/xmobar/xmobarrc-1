@@ -9,7 +9,6 @@ Config { overrideRedirect = False
        , fgColor  = "#f8f8f2"
 --       , position = TopW L 90
        , position = TopSize L 100 30
-       , iconRoot = "/home/arjun/.config/xmonad/xpm"  -- default: "."
        , commands = [
        Run Weather "VIDD"
                         [ "--template", "<weather> <tempC>°C"
@@ -68,5 +67,5 @@ Config { overrideRedirect = False
         ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = " <icon=haskell_20.xpm/> %_XMONAD_LOG_1% } {<box type=Bottom width=2 mb=2 color=#ff6c6b><action=`pavucontrol`>%alsa:default:Master% </action></box> | <box type=Bottom width=2 mb=2 color=#ecbe7b><action=`alacritty -e htop`>%cpu% %memory% </action></box> | <box type=Bottom width=2 mb=2 color=seagreen> %batt0% %battery% </box> | <box type=Bottom width=2 mb=2 color=cyan> %date% </box> "
+       , template = "%_XMONAD_LOG_1% } {<box type=Bottom width=2 mb=2 color=#ff6c6b><action=`pavucontrol`>%alsa:default:Master% </action></box> | <box type=Bottom width=2 mb=2 color=#ecbe7b><action=`alacritty -e htop`>%cpu% %memory% </action></box> | <box type=Bottom width=2 mb=2 color=seagreen> %batt0% %battery% </box> | <box type=Bottom width=2 mb=2 color=cyan> %date% </box> "
        }
