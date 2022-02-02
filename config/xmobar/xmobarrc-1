@@ -10,61 +10,71 @@ Config { overrideRedirect = False
 --       , position = TopW L 90
        , position = TopSize L 100 30
        , commands = [
-       Run Weather "VIDD"
-                        [ "--template", "<weather> <tempC>°C"
-                        , "-L", "0"
-                        , "-H", "25"
-                        , "--low"   , "lightblue"
-                        , "--normal", "#f8f8f2"
-                        , "--high"  , "red"
-                        ] 36000
-                    , Run Cpu
-                        [ "-L", "3"
-                        , "-H", "50"
-                        , "--high"  , "red"
-                        , "--normal", "green"
-                        ] 10
-                    , Run Alsa "default" "Master"
-                        [ "--template", "<fn=1>\xf028</fn> <volumestatus>"
-                        , "--suffix"  , "True"
-                        , "--"
-                        , "--on", ""
-                        ]
-                    , Run Battery [
-                     "-t", "<acstatus>: <left>% - <timeleft>",
-	            "--",
-	            --"-c", "charge_full",
-	            "-O", "AC",
-	            "-o", "Bats",
-	            "-h", "green",
-	            "-l", "red"
-        	] 10
+              Run Weather "VIDD"
+              [ "--template", "<weather> <tempC>°C"
+              , "-L", "0"
+              , "-H", "25"
+              , "--low"   , "lightblue"
+              , "--normal", "#f8f8f2"
+              , "--high"  , "red"
+              ] 36000
+
+            , Run Cpu
+              [ "-L", "3"
+              , "-H", "50"
+              , "--high"  , "red"
+              , "--normal", "green"
+              ] 10
+
+            , Run Alsa "default" "Master"
+            [ "--template", "<fn=1>\xf028</fn> <volumestatus>"
+            , "--suffix"  , "True"
+            , "--"
+            , "--on", ""
+            ]
+
+            , Run Battery [
+            "-t", "<acstatus>: <left>% - <timeleft>",
+            "--",
+            --"-c", "charge_full",
+            "-O", "AC",
+            "-o", "Bats",
+            "-h", "green",
+            "-l", "red"
+            ] 10
+
             , Run BatteryN ["BAT0"]
             ["-t", "<acstatus>"
-             , "-S", "Off", "-d", "0", "-m", "3"
-             , "-L", "10", "-H", "90", "-p", "3"
-             , "-W", "0"
-             , "-f", "\xf244\xf243\xf243\xf243\xf242\xf242\xf242\xf241\xf241\xf240"
-             , "--"
-             , "-P"
-             , "-a", "notify-send -u critical 'Battery running out!!!!!!'"
-             , "-A", "5"
-             , "-i", "<fn=1>\xf1e6</fn>"
-             , "-O", "<fn=1><leftbar> \xf1e6</fn>"
-             , "-o", "<fn=1><leftbar></fn>"
-             , "-H", "10", "-L", "7"
-             ] 50 "batt0"
-             , Run BatteryP ["BAT0"]
-             ["-t", "<acstatus>"
-             , "-L", "10", "-H", "80"
-             , "-l", "red", "-h", "white"
-             , "--", "-O", "Charging", "-o", "<left>% - <timeleft>"
-             ] 10
-            , Run Memory ["--template", "Mem: <usedratio>%"] 10
-            , Run Swap [] 10
-            , Run Date "%a %d-%m-%Y <fc=#8be9fd>%I:%M %p</fc>" "date" 10
-            , Run XPropertyLog "_XMONAD_LOG_1"
-        ]
+            , "-S", "Off", "-d", "0", "-m", "3"
+            , "-L", "10", "-H", "90", "-p", "3"
+            , "-W", "0"
+            , "-f", "\xf244\xf243\xf243\xf243\xf242\xf242\xf242\xf241\xf241\xf240"
+            , "--"
+            , "-P"
+            , "-a", "notify-send -u critical 'Battery running out!!!!!!'"
+            , "-A", "5"
+            , "-i", "<fn=1>\xf1e6</fn>"
+            , "-O", "<fn=1><leftbar> \xf1e6</fn>"
+            , "-o", "<fn=1><leftbar></fn>"
+            , "-H", "10", "-L", "7"
+            ] 50 "batt0"
+
+           , Run BatteryP ["BAT0"]
+           ["-t", "<acstatus>"
+           , "-L", "10", "-H", "80"
+           , "-l", "red", "-h", "white"
+           , "--", "-O", "Charging", "-o", "<left>% - <timeleft>"
+           ] 10
+
+           , Run Memory ["--template", "Mem: <usedratio>%"] 10
+
+           , Run Swap [] 10
+
+           , Run Date "%a %d-%m-%Y <fc=#8be9fd>%I:%M %p</fc>" "date" 10
+
+           , Run XPropertyLog "_XMONAD_LOG_1"
+           ]
+
        , sepChar  = "%"
        , alignSep = "}{"
        , template = "%_XMONAD_LOG_1% } {<box type=Bottom width=2 mb=2 color=#ff6c6b><action=`pavucontrol`>%alsa:default:Master% </action></box> | <box type=Bottom width=2 mb=2 color=#ecbe7b><action=`alacritty -e htop`>%cpu% %memory% </action></box> | <box type=Bottom width=2 mb=2 color=seagreen> %batt0% %battery% </box> | <box type=Bottom width=2 mb=2 color=cyan> %date% </box> "
