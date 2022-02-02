@@ -8,6 +8,7 @@ window:
 
     dynamic_padding:  true
     decoration: none
+    opacity: 1
 
 font:
   normal:
@@ -64,8 +65,6 @@ colors:
     - { index: 19, color: '0x353535' }
     - { index: 20, color: '0xb2ccd6' }
     - { index: 21, color: '0xeeffff' }
-
-background_opacity: 1
 
 # cursor:
 #   style: Underline
