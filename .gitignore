@@ -15,3 +15,13 @@ old-emacs/*
 /emacs/eln-cache/*
 /emacs/*.ttf
 /emacs/url/cache/*
+/emacs/bookmarks
+/emacs/history
+/emacs/company-statistics-cache.el
+/emacs/transient/
+/emacs/url/
+/emacs/projectile-bookmarks.eld
+/emacs/nov-places
+/emacs/notes
+/emacs/recentf
+/emacs/request/
