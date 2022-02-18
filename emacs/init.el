@@ -32,9 +32,8 @@
 ;; Bootstrap 'use-package'
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+(if (not (package-installed-p 'use-package))
+    (package-install 'use-package))
 
 ;;Load Use-package
 (eval-when-compile
@@ -51,12 +50,14 @@
 
 (require 'setup-undo-tree)
 (require 'setup-emmet)
-(require 'setup-company)
+;;(require 'setup-company)
+(require 'setup-corfu)
+(require 'setup-cape)
+
 (require 'setup-web-mode)
 (require 'setup-electric-pair-mode)
-;;(require 'setup-counsel)
-(require 'setup-selectrum)
-(require 'setup-prettier)
+
+;;(require 'setup-prettier)
 
 (require 'setup-flycheck)
 ;; (require 'setup-sml)
@@ -72,20 +73,29 @@
 (require 'setup-elpy)
 (require 'setup-lsp)
 (require 'setup-haskell)
-(require 'setup-nim)
+;;(require 'setup-nim)
 (require 'setup-nov)
 (require 'setup-magit)
 (require 'setup-org)
 (require 'setup-pdf)
 (require 'setup-irc)
 
+;; Convenience packages
+(require 'setup-consult)
+(require 'setup-embark)
+;;(require 'setup-selectrum)
+(require 'setup-ctrlf)
+(require 'setup-marginalia)
+(require 'setup-vertico)
+;;(require 'setup-counsel)
 ;; ;; OPTIONAL PACKAGES, chose to load on convenience
 ;; ;; these packages result in things mostly cosmetic.
 
 (require 'setup-theme)
-(require 'setup-consult)
+(require 'setup-dashboard)
+(require 'setup-doom-modeline)
+
 ;;(require 'setup-miniframe)
-(require 'setup-embark)
 
 ;; GENERAL SETUP
 (require 'general-emacs-setup)
@@ -167,7 +177,7 @@
  '(fill-column 80)
  '(linum-format " %7i ")
  '(package-selected-packages
-   '(timu-spacegrey-theme ox-hugo yaml-imenu yaml-mode visual-fill-column snazzy-theme embark-consult git-link oceanic-theme sketch-themes good-scroll mini-frame-mode mini-frame lsp-treemacs treemacs-projectile treemacs treemacs-all-the-icons treemacs-magit marginalia consult ctrlf shell-switcher selectrum hindent kaolin-themes hybrid-reverse-theme purescript-mode org-notifications org-roam side-hustle projectile vterm vterm-toggle rcirc-alert doom-modeline doom-themes zenburn-theme dracula-theme multiple-cursors solarized-theme magit-org-todos org gnu-elpa-keyring-update circadian define-it org-alert org-link-beautify define-word org-bullets rainbow-delimiters-mode nov suggestion-box metronome transpose-frame lsp-ui-mode lsp-mode immaterial-theme string-inflection paredit all-the-icons-dired all-the-icons-ibuffer lsp-haskell use-package lsp-ui company-statistics company-c-headers company-rtags company-lsp flycheck-haskell haskell-mode elpy pipenv company-jedi all-the-icons dashboard exec-path-from-shell whole-line-or-region lorem-ipsum company-irony irony edts nordless-theme color-theme-sanityinc-tomorrow spacegray-theme dad-joke nord-theme bm markdown-mode flyspell-popup web-mode vi-tilde-fringe undo-tree rjsx-mode restart-emacs rainbow-mode rainbow-delimiters neotree material-theme magit json-mode js2-refactor gitconfig-mode git-gutter flycheck-pos-tip emmet-mode counsel company-web company-tern color-theme-sanityinc-solarized base16-theme ag ace-window))
+   '(consult-yasnippet yasnippet kind-icon cape corfu dante orderless vertico dhall-mode selectrum-prescient consult-company consult-dir consult-lsp line-reminder org-noter-pdftools org-noter timu-spacegrey-theme ox-hugo yaml-imenu yaml-mode visual-fill-column snazzy-theme embark-consult git-link oceanic-theme sketch-themes good-scroll mini-frame lsp-treemacs treemacs-projectile treemacs treemacs-all-the-icons treemacs-magit marginalia consult ctrlf shell-switcher selectrum hindent kaolin-themes hybrid-reverse-theme purescript-mode org-notifications org-roam side-hustle projectile vterm vterm-toggle rcirc-alert doom-modeline doom-themes multiple-cursors solarized-theme magit-org-todos org gnu-elpa-keyring-update circadian define-it org-alert org-link-beautify define-word org-bullets nov suggestion-box metronome transpose-frame lsp-mode immaterial-theme string-inflection paredit all-the-icons-dired all-the-icons-ibuffer lsp-haskell use-package lsp-ui company-statistics company-c-headers company-rtags flycheck-haskell haskell-mode elpy pipenv company-jedi all-the-icons dashboard exec-path-from-shell whole-line-or-region lorem-ipsum company-irony irony edts nordless-theme color-theme-sanityinc-tomorrow spacegray-theme dad-joke nord-theme bm markdown-mode flyspell-popup web-mode vi-tilde-fringe undo-tree rjsx-mode restart-emacs rainbow-mode rainbow-delimiters neotree material-theme magit json-mode js2-refactor git-gutter flycheck-pos-tip emmet-mode counsel company-web color-theme-sanityinc-solarized base16-theme ag ace-window))
  '(warning-suppress-types '((comp))))
 
 (provide 'init)
