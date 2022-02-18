@@ -5,12 +5,6 @@
 
 (require 'package)
 
-;; Add melpa and org sources
-
-;; Orgmode.org/Elpa seems to be depreceated after 9.5, use regulat gnu org i guess ?
-;; (add-to-list 'package-archives '("org"       . "https://orgmode.org/elpa/") t )
-;; (add-to-list 'package-archives '("melpa"     . "https://melpa.org/packages/") t )
-
 (setq package-archives
       '(("gnu" . "https://elpa.gnu.org/packages/")
         ;; ("gnu-devel" . "https://elpa.gnu.org/devel/")
@@ -88,6 +82,7 @@
 (require 'setup-marginalia)
 (require 'setup-vertico)
 ;;(require 'setup-counsel)
+
 ;; ;; OPTIONAL PACKAGES, chose to load on convenience
 ;; ;; these packages result in things mostly cosmetic.
 
@@ -100,66 +95,6 @@
 ;; GENERAL SETUP
 (require 'general-emacs-setup)
 
-;; (custom-set-variables
-;;  ;; custom-set-variables was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(all-the-icons-dired-monochrome nil)
-;;  '(ansi-color-faces-vector
-;;    [default bold shadow italic underline bold bold-italic bold])
-;;  '(ansi-term-color-vector
-;;    [unspecified "#151515" "#ff0086" "#00c918" "#aba800" "#3777e6" "#ad00a1" "#3777e6" "#d0d0d0"] t)
-;;  '(beacon-color "#ff9da4")
-;;  '(custom-safe-themes
-;;    '("1704976a1797342a1b4ea7a75bdbb3be1569f4619134341bd5a4c1cfb16abad4" "a4127e6ce49d632c1b68881edec9d9e9e3289de31195934095aa1ec07fdc9094" "6193016c72612b8466b94da3005f2262512021071e63ab3de1e2745108bbbfe8" "b21fd6d881564e530ef64144a65ca4c0b9ead7ded28e90a9404e48d7e4e464d4" "6128465c3d56c2630732d98a3d1c2438c76a2f296f3c795ebda534d62bb8a0e3" "a3bdcbd7c991abd07e48ad32f71e6219d55694056c0c15b4144f370175273d16" "01cf34eca93938925143f402c2e6141f03abb341f27d1c2dba3d50af9357ce70" "191bc4e53173f13e9b827272fa39be59b7295a0593b9f070deb6cb7c3745fd1d" "4bf5c18667c48f2979ead0f0bdaaa12c2b52014a6abaa38558a207a65caeb8ad" "6151e76f90a494363b167acdb0d36aada6d34c1843999523abe46764abb04179" "78c01e1b7f3dc9e47bdd48f74dc98dc1a345c291f83b68ac8a1b40191f24d658" "7220c44ef252ec651491125f1d95ad555fdfdc88f872d3552766862d63454582" "d5e13e2100e2a1167cd521558c5344809c154cc211ccd39a9c06bb83d254927c" "be9645aaa8c11f76a10bcf36aaf83f54f4587ced1b9b679b55639c87404e2499" "bc99493670a29023f99e88054c9b8676332dda83a37adb583d6f1e4c13be62b8" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "e0d42a58c84161a0744ceab595370cbe290949968ab62273aed6212df0ea94b4" "7527f3308a83721f9b6d50a36698baaedc79ded9f6d5bd4e9a28a22ab13b3cb1" "5a7830712d709a4fc128a7998b7fa963f37e960fd2e8aa75c76f692b36e6cf3c" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default))
-;;  '(elpy-rpc-backend "jedi" t)
-;;  '(flycheck-color-mode-line-face-to-color 'mode-line-buffer-id)
-;;  '(flycheck-disabled-checkers '(json-jsonlist haskell-stack-ghc))
-;;  '(flycheck-python-flake8-executable "python3")
-;;  '(frame-background-mode 'dark)
-;;  '(hl-paren-colors '("#B9F" "#B8D" "#B7B" "#B69" "#B57" "#B45" "#B33" "#B11"))
-;;  '(hl-sexp-background-color "#1c1f26")
-;;  '(ivy-rich-mode t)
-;;  '(linum-format " %7i ")
-;;  '(lsp-ui-sideline-diagnostic-max-lines 6)
-;;  '(objed-cursor-color "#e1c1ee")
-;;  '(org-confirm-babel-evaluate nil)
-;;  '(org-default-notes-file (concat org-directory "/notes.org"))
-;;  ;;'(org-directory "D:/orgfiles")
-;;  '(org-export-html-postamble nil)
-;;  '(org-hide-leading-stars t)
-;;  '(org-src-fontify-natively t)
-;;  '(org-startup-folded 'overview)
-;;  '(org-startup-indented t)
-
-;;  '(pdf-view-midnight-colors (cons "#c6c6c6" "#282b33"))
-;;  '(pos-tip-background-color "#DEDAD5")
-;;  '(pos-tip-foreground-color "#4b5254")
-;;  '(python-shell-interpreter "python3" t)
-;;  '(tramp-syntax 'default nil (tramp))
-;;  '(vc-annotate-background nil)
-;;  '(vc-annotate-background-mode nil)
-;;  '(vc-annotate-color-map
-;;    '((20 . "#f36c60")
-;;      (40 . "#ff9800")
-;;      (60 . "#fff59d")
-;;      (80 . "#8bc34a")
-;;      (100 . "#81d4fa")
-;;      (120 . "#4dd0e1")
-;;      (140 . "#b39ddb")
-;;      (160 . "#f36c60")
-;;      (180 . "#ff9800")
-;;      (200 . "#fff59d")
-;;      (220 . "#8bc34a")
-;;      (240 . "#81d4fa")
-;;      (260 . "#4dd0e1")
-;;      (280 . "#b39ddb")
-;;      (300 . "#f36c60")
-;;      (320 . "#ff9800")
-;;      (340 . "#fff59d")
-;;      (360 . "#8bc34a")))
-;;  '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
