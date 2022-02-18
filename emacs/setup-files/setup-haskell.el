@@ -12,11 +12,6 @@
 
   :config
   (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
-  (add-hook 'haskell-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends)
-                 (append '((company-capf company-dabbrev-code))
-                         company-backends))))
 
   :custom
   ;; set interactive haskell mode variable settings
@@ -26,7 +21,7 @@
   (haskell-process-prompt-restart-on-cabal-change t)
   (haskell-process-load-or-reload-prompt t)
   (haskell-process-suggest-hoogle-imports t)
-  (haskell-process-type 'cabal-new-repl)
+  (haskell-process-type 'auto)
   (haskell-process-use-presentation-mode nil)
   (haskell-indent-offset 2)
 
