@@ -61,12 +61,12 @@
     :config
     (add-hook 'after-init-hook 'company-statistics-mode))
 
-  (use-package company-jedi
-    :ensure t
-    :init
-    (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi)))
-    (setq company-jedi-python-bin "python3")
-    (setq python-shell-interpreter "python3"))
+  ;; (use-package company-jedi
+  ;;   :ensure t
+  ;;   :init
+  ;;   (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi)))
+  ;;   (setq company-jedi-python-bin "python3")
+  ;;   (setq python-shell-interpreter "python3"))
 
   (add-hook 'haskell-mode-hook
           (lambda ()
