@@ -4,6 +4,9 @@
   :config
   (custom-set-variables)
   (load-library "find-lisp")
+  (org-babel-do-load-languages
+    'org-babel-load-languages
+    '((haskell . t)))
 
   :custom
   org-todo-keywords
