@@ -3,7 +3,6 @@
 ;;; Code:
 
 (use-package erc
-  :ensure t
   :custom
   (erc-autojoin-timing 'ident)
   ;;(erc-fill-function 'erc-fill-static)

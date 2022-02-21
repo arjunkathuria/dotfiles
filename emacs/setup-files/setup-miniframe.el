@@ -3,9 +3,7 @@
 ;;; Code:
 
 (use-package mini-frame
-  :ensure t
   :custom
-
   (mini-frame-ignore-commands
    '(ctrlf-forward-default))
   (mini-frame-detach-on-hide nil)

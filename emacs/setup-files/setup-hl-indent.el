@@ -3,7 +3,6 @@
 ;;; Code:
 
 (use-package highlight-indent-guides
-  :ensure t
   :init
   (add-hook 'python-mode-hook 'highlight-indent-guides-mode)
   :config

@@ -5,7 +5,6 @@
   :init ()
   :bind (
          ("C-c o" . 'ace-window))
-  :ensure t
 )
 
 (provide 'setup-ace-window)

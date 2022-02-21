@@ -1,6 +1,5 @@
 (use-package pdf-tools
   :defer t
-  :ensure t
   ;; :init  (pdf-tools-install)
   :config
   (pdf-tools-install)
@@ -16,7 +15,6 @@
 
 (use-package org-pdftools
   :defer t
-  :ensure t
   )
 
 (provide 'setup-pdf)

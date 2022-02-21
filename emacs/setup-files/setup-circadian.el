@@ -1,9 +1,7 @@
 (use-package circadian
   :config
-  (use-package kaolin-themes
-    :ensure t)
-  (use-package base16-theme
-    :ensure t)
+  (use-package kaolin-themes)
+  (use-package base16-theme)
 
   (setq calendar-latitude 28.6139)
   (setq calendar-longitude 77.2090)

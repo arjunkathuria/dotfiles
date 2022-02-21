@@ -2,7 +2,6 @@
 
 ;;; Code:
 (use-package company
-  :ensure t
   ;; (add-hook 'prog-mode-hook 'company-mode)
   ;; (add-hook 'comint-mode-hook 'company-mode)
 
@@ -34,14 +33,12 @@
   (define-key company-active-map (kbd "<backtab>") 'company-select-previous)
 
   (use-package company-web
-    :ensure t
     :hook (web-mode)
     :bind (("C-c w" . company-web-html))
     :config
     (add-to-list 'company-backends 'company-web-html))
 
   ;; (use-package company-lsp
-  ;;   :ensure t
   ;;   :defer t
   ;;   :config
   ;;   (add-to-list 'company-backends 'company-lsp))
@@ -57,12 +54,10 @@
   ;;   (add-to-list 'company-backends 'company-c-headers))
   
   (use-package company-statistics
-    :ensure t
     :config
     (add-hook 'after-init-hook 'company-statistics-mode))
 
   ;; (use-package company-jedi
-  ;;   :ensure t
   ;;   :init
   ;;   (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi)))
   ;;   (setq company-jedi-python-bin "python3")

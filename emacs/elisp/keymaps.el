@@ -19,7 +19,6 @@
 (global-set-key (kbd "C-<right>") 'enlarge-window-horizontally)
 
 (use-package transpose-frame
-  :ensure t
   :bind
   ("C-c t f" . 'transpose-frame))
 

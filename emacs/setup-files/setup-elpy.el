@@ -3,7 +3,6 @@
 ;;; Code:
 
 (use-package elpy
-  :ensure t
   :defer t
   :commands elpy-enable
   :init

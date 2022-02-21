@@ -2,7 +2,6 @@
 
 ;;; Code:
 (use-package bm
-  :ensure t
   :bind
   (("C-c =" . bm-toggle)
    ("C-c [" . bm-previous)

@@ -1,5 +1,4 @@
 (use-package nim-mode
-  :ensure t
   ;;:hook
   ;;(nim-mode . highlight-indentation-current-column-mode)
   :config

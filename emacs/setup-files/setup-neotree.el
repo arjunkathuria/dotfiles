@@ -1,5 +1,4 @@
 (use-package neotree
-  :ensure t
   ;;:after all-the-icons
   :bind
   ("C-c DEL" . neotree-toggle) ; DEL = bacspace

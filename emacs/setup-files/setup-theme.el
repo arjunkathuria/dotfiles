@@ -1,8 +1,6 @@
 ;; Configuration for custom theme i use
 
 ;;; Code:
-(use-package doom-themes
-  :ensure t
   :config
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled

@@ -1,6 +1,5 @@
 ;; Add extensions
 (use-package cape
-  :ensure t
   :after corfu
   ;; Bind dedicated completion commands
   :bind (("C-c p p" . completion-at-point) ;; capf

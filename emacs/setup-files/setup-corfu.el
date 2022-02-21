@@ -2,7 +2,6 @@
 
 ;;; Code:
 (use-package corfu
-  :ensure t
   ;; Optional customizations
   :custom
   ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
@@ -33,7 +32,6 @@
          ("C-M-/" . dabbrev-expand)))
 
 (use-package kind-icon
-  :ensure t
   :after corfu
   :custom
   (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly

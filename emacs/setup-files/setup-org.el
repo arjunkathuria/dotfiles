@@ -1,5 +1,4 @@
 (use-package org
-  :ensure t
   :defer t
   :config
   (custom-set-variables)
@@ -33,12 +32,11 @@
   )
 
 (use-package org-bullets
-  :ensure t
+  :after org
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (use-package ox-hugo
-  :ensure t            ;Auto-install the package from Melpa (optional)
   :after ox)
 
 ;;(setenv "BROWSER" "firefox")

@@ -1,5 +1,4 @@
 (use-package lsp-mode
-  :ensure t
   ;; :hook
   ;; (nim-mode . lsp)
   ;; (haskell-mode . lsp)
@@ -9,7 +8,6 @@
   (setq lsp-completion-provider :capf)
 
   (use-package lsp-ui
-    :ensure t
     ;; :hook
     ;; (lsp-mode)
     :config

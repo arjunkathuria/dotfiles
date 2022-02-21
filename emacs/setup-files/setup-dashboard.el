@@ -2,7 +2,6 @@
 
 ;; Or if you use use-package
 (use-package dashboard
-  :ensure t
   :config
   (dashboard-setup-startup-hook)
   :custom

@@ -3,7 +3,6 @@
 ;;; Code:
 
 (use-package ctrlf
-  :ensure t
   :config
   (ctrlf-mode))
 

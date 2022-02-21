@@ -2,24 +2,8 @@
 
 ;;; Code:
 
-(use-package ivy
-  :ensure t)
-
-(use-package ivy-rich
-  :ensure t
-  :defer t)
-
-(use-package all-the-icons-ivy-rich
-  :ensure t
-  :defer t
-  :after all-the-icons
-  )
-
 (use-package counsel
   :init
-  (ivy-mode 1)
-  (ivy-rich-mode 1)
-  (all-the-icons-ivy-rich-mode 1)
   (setq ivy-use-virtual-buffers t
 	ivy-count-format "%d/%d ")
   (setq enable-recursive-minibuffers t)
