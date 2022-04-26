@@ -84,4 +84,7 @@
 ;; turn off backup files.
 (setq make-backup-files nil)
 
+;;; setup calender with week numbers
+(require 'calender)
+
 ;;; general-emacs-setup.el ends here
