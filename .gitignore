@@ -25,3 +25,4 @@ old-emacs/*
 /emacs/notes
 /emacs/recentf
 /emacs/request/
+/emacs/.lsp-session*
