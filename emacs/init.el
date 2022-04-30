@@ -76,11 +76,9 @@
 ;; Convenience packages
 (require 'setup-consult)
 (require 'setup-embark)
-;;(require 'setup-selectrum)
 (require 'setup-ctrlf)
 (require 'setup-marginalia)
 (require 'setup-vertico)
-;;(require 'setup-counsel)
 
 ;; ;; OPTIONAL PACKAGES, chose to load on convenience
 ;; ;; these packages result in things mostly cosmetic.
@@ -89,7 +87,7 @@
 (require 'setup-dashboard)
 ;; (require 'setup-doom-modeline)
 
-;;(require 'setup-miniframe)
+;; (require 'setup-miniframe)
 
 ;; GENERAL SETUP
 (require 'general-emacs-setup)
