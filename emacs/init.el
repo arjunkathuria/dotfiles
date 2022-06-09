@@ -88,6 +88,7 @@
 ;; ;; OPTIONAL PACKAGES, chose to load on convenience
 ;; ;; these packages result in things mostly cosmetic.
 
+(require 'setup-rainbow-brackets)
 (require 'setup-theme)
 (require 'setup-dashboard)
 ;; (require 'setup-doom-modeline)

@@ -29,13 +29,6 @@
   (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
 )
 
-;; Rainbow colored brackets
-(use-package rainbow-delimiters
-  :ensure t
-  :hook
-  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-)
-
 ;;----------------------
 
 ;; CUSTOM MAJOR MODES
