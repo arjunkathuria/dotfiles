@@ -41,6 +41,11 @@
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes/"))
 ;; REQUIRED PACKAGES
 
+
+;; setup direnv with .envrc files
+(require 'setup-direnv-envrc)
+
+;; REQUIRED PACKAGES
 (require 'setup-undo-tree)
 (require 'setup-emmet)
 ;;(require 'setup-company)
