@@ -3,20 +3,22 @@
 
 ;;; Code
 (use-package vertico
-  :init
-  (vertico-mode)
 
+  :custom
   ;; Different scroll margin
   ;; (setq vertico-scroll-margin 0)
 
   ;; Show more candidates
-  ;; (setq vertico-count 20)
+  (vertico-count 13)
 
   ;; Grow and shrink the Vertico minibuffer
-  ;; (setq vertico-resize t)
+  (vertico-resize t)
 
   ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
-  ;; (setq vertico-cycle t)
+  (vertico-cycle nil)
+
+  :init
+  (vertico-mode)
   )
 
 ;; Optionally use the `orderless' completion style. See
@@ -30,9 +32,18 @@
   ;; Configure a custom style dispatcher (see the Consult wiki)
   ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
   ;;       orderless-component-separator #'orderless-escapable-split-on-space)
-  (setq completion-styles '(orderless)
+  (setq completion-styles '(substring orderless basic)
         completion-category-defaults nil
         completion-category-overrides '((file (styles partial-completion)))))
+
+  ;; Use `consult-completion-in-region' if Vertico is enabled.
+  ;; Otherwise use the default `completion--in-region' function.
+  (setq completion-in-region-function
+        (lambda (&rest args)
+          (apply (if vertico-mode
+                     'consult-completion-in-region
+                   #'completion--in-region)
+                 args)))
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
@@ -43,9 +54,14 @@
 (use-package emacs
   :init
   ;; Add prompt indicator to `completing-read-multiple'.
-  ;; Alternatively try `consult-completing-read-multiple'.
+  ;; We display [CRM<separator>], e.g., [CRM,] if the separator is a comma.
   (defun crm-indicator (args)
-    (cons (concat "[CRM] " (car args)) (cdr args)))
+    (cons (format "[CRM%s] %s"
+                  (replace-regexp-in-string
+                   "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" ""
+                   crm-separator)
+                  (car args))
+          (cdr args)))
   (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
 
   ;; Do not allow the cursor in the minibuffer prompt
@@ -59,7 +75,8 @@
   ;;       #'command-completion-default-include-p)
 
   ;; Enable recursive minibuffers
-  (setq enable-recursive-minibuffers t))
+  (setq enable-recursive-minibuffers t)
+  )
 
 (provide 'setup-vertico)
 ;;; setup-vertico.el ends here
