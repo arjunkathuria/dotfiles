@@ -91,6 +91,8 @@
 (require 'setup-rainbow-brackets)
 (require 'setup-theme)
 (require 'setup-dashboard)
+(require 'setup-devdocs)
+
 ;; (require 'setup-doom-modeline)
 
 ;; (require 'setup-miniframe)
