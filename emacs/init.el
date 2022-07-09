@@ -68,7 +68,6 @@
 ;;(require 'setup-alchemist)
 ;;(require 'setup-slime)
 
-(require 'setup-elpy)
 (require 'setup-lsp)
 (require 'setup-haskell)
 ;;(require 'setup-nim)
