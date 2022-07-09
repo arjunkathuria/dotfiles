@@ -48,7 +48,6 @@
 ;; REQUIRED PACKAGES
 (require 'setup-undo-tree)
 (require 'setup-emmet)
-;;(require 'setup-company)
 (require 'setup-corfu)
 (require 'setup-cape)
 
@@ -65,12 +64,9 @@
 (require 'setup-whichkey)
 (require 'setup-bm)
 (require 'setup-whitespace-cleanup)
-;;(require 'setup-alchemist)
-;;(require 'setup-slime)
 
 (require 'setup-lsp)
 (require 'setup-haskell)
-;;(require 'setup-nim)
 (require 'setup-nov)
 (require 'setup-magit)
 (require 'setup-org)
