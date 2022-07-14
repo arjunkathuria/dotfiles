@@ -12,8 +12,8 @@
   ;; (corfu-preview-current nil)    ;; Disable current candidate preview
   ;; (corfu-preselect-first nil)    ;; Disable candidate preselection
   ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
-  ;; (corfu-echo-documentation nil) ;; Disable documentation in the echo area
-  ;; (corfu-scroll-margin 5)        ;; Use scroll margin
+  (corfu-echo-documentation t)      ;; Disable documentation in the echo area
+  ;; (corfu-scroll-margin 6)           ;; Use scroll margin
 
   ;; You may want to enable Corfu only for certain modes.
   ;; :hook ((prog-mode . corfu-mode)
@@ -23,7 +23,9 @@
   ;; Recommended: Enable Corfu globally.
   ;; This is recommended since dabbrev can be used globally (M-/).
   :init
-  (corfu-global-mode))
+  ;;(corfu-global-mode)
+  (global-corfu-mode)
+  )
 
 ;; Use dabbrev with Corfu!
 (use-package dabbrev
@@ -31,12 +33,19 @@
   :bind (("M-/" . dabbrev-completion)
          ("C-M-/" . dabbrev-expand)))
 
+(use-package corfu-doc
+  :after corfu
+  :init
+  (add-hook 'corfu-mode-hook #'corfu-doc-mode)
+  )
+
 (use-package kind-icon
   :after corfu
   :custom
   (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
   :config
-  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter)
+  )
 
 ;; A few more useful configurations...
 (use-package emacs
