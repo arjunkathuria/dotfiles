@@ -1,23 +1,13 @@
 ;; Haskell config Configuration
 
-(defun haskell-ghc-tags ()
-   "Use (buffer-file-name) and/or `default-directory` if necessary here."
-   (let ((default-directory (haskell-cabal--find-tags-dir)))
-     (shell-command "~/.cabal/bin/ghc-tags -e && echo TAGS Generated")))
-
 ;;; Code:
 (use-package haskell-mode
   :bind
   ("C-c c" . 'haskell-compile)
   ("C-c h" . 'haskell-check)
 
-  ;; :hook
-  ;;interactive-haskell-mode
-  ;; '(flyspell-prog-mode highlight-uses-mode ormolu-format-on-save-mode interactive-haskell-mode)
-
   :config
   (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
-  (add-hook 'haskell-mode-hook (lambda () (add-hook 'after-save-hook 'haskell-ghc-tags t)))
 
   :custom
   ;; set interactive haskell mode variable settings
