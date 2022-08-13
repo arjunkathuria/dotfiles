@@ -1,7 +1,6 @@
 import System.Exit (exitSuccess)
 import XMonad
 import XMonad.Actions.CycleWS (nextWS, prevWS, toggleWS)
-
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
@@ -9,7 +8,6 @@ import XMonad.Hooks.ManageHelpers (doCenterFloat, isDialog)
 import XMonad.Hooks.RefocusLast (isFloat)
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
-
 import XMonad.Layout.Magnifier
 import XMonad.Layout.Master
 import XMonad.Layout.MultiColumns
@@ -17,9 +15,7 @@ import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Layout.Spacing (smartSpacing, smartSpacingWithEdge, spacingWithEdge)
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns
-
 import XMonad.Prompt.ConfirmPrompt
-
 import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
@@ -31,7 +27,7 @@ main =
     . ewmhFullscreen
     . ewmh
     . docks
-    . dynamicEasySBs myStatusBarSpawner
+    . dynamicEasySBs statusBarsSpawner
     $ myConfig
 
 myConfig =
@@ -91,6 +87,9 @@ myStartupHook = do
   spawnOnce "xrandr --dpi 124 &"
   spawnOnce "picom -b --config ~/.config/picom/picom.conf &" -- picom composite manager
   -- systray applets
+  spawn "killall trayer"
+  spawn "sleep 2 && trayer --edge top --align right --widthtype percent --width 6 --height 34 --transparent true --tint 0x1b1b1b"
+
   spawnOnce "nm-applet &" -- network manager
   -- spawnOnce "pasystray" -- pasystray
   spawnOnce "blueman-applet &" -- bluetooth applet
@@ -147,8 +146,8 @@ myLayout =
               inactiveBorderColor = "#3B4252"
             }
 
-makeXmobarPPShit :: ScreenId -> PP
-makeXmobarPPShit screenId =
+makeXmobarPPTop :: ScreenId -> PP
+makeXmobarPPTop screenId =
   def
     { ppSep = magenta " • ",
       ppTitleSanitize = xmobarStrip,
@@ -156,7 +155,7 @@ makeXmobarPPShit screenId =
       ppHidden = white . wrap " " "",
       ppHiddenNoWindows = lowWhite . wrap " " "",
       ppUrgent = red . wrap (yellow "!") (yellow "!"),
-      ppOrder = \[ws, l, _, wins] -> [ws, l, wins],
+      ppOrder = \[ws, l, _, wins] -> [ws, wins],
       ppExtras = [(logTitlesOnScreen screenId) formatFocused formatUnfocused]
     }
   where
@@ -176,9 +175,12 @@ makeXmobarPPShit screenId =
     red = xmobarColor "#ff5555" ""
     lowWhite = xmobarColor "#bbbbbb" ""
 
-myStatusBarSpawner screenId@(S s) =
-  pure $
+topStatusBarSpawner screenId@(S s) =
     statusBarPropTo
       ("_XMONAD_LOG_" <> show s)
       ("xmobar -x " <> show s <> " ~/.config/xmobar/xmobar" <> show s <> ".hs")
-      (pure $ makeXmobarPPShit screenId)
+      (pure $ makeXmobarPPTop screenId)
+
+statusBarsSpawner :: ScreenId -> IO StatusBarConfig
+statusBarsSpawner screenId@(S s) =
+  pure $ topStatusBarSpawner screenId
