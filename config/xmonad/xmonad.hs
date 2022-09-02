@@ -27,7 +27,7 @@ main =
     . ewmhFullscreen
     . ewmh
     . docks
-    . dynamicEasySBs statusBarsSpawner
+    . dynamicEasySBs statusBarSpawner
     $ myConfig
 
 myConfig =
@@ -48,21 +48,25 @@ myManageHook =
       className =? "Pavucontrol" --> doCenterFloat,
       appName =? "REAPER" --> doCenterFloat,
       className =? "REAPER" --> doCenterFloat,
-      isDialog --> doFloat,
+      isDialog --> doCenterFloat,
       isFloat --> doCenterFloat
     ]
 
 myKeymap =
   [ ("M-<Return>", spawn $ terminal myConfig),
-    ("M-S-z", spawn "xflock4"),
+    -- ("M-S-z", spawn "xflock4"),
+    ("M-S-z", spawn lockCommand),
     ("M-S-q", confirmPrompt def "exit" $ io exitSuccess),
+
     -- screenshots
     ("M-S-=", unGrab *> spawn "scrot -s"),
     ("M-S-v", unGrab >> spawn "scrot -m ~/Pictures/screenshots/screenshot-%Y%m%dT%H%M%S.png"),
     ("M-]", spawn "firefox"),
+
     -- rofi
     ("M-d", spawn "rofi -show combi"),
     ("M1-<Tab>", spawn "rofi -show window"),
+
     -- volume and brightness keys
     ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume 0 +5%"),
     ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume 0 -5%"),
@@ -76,31 +80,33 @@ myKeymap =
     ("M-n", nextWS),
     ("M-p", prevWS),
     ("M-o", toggleWS),
-    -- hide polybar
-    ("M-S-b", spawn "polybar-msg cmd toggle"),
+
     -- resart xmonad
-    ("M-S-r", spawn "killall xmobar; xmonad --recompile; xmonad --restart")
-  ]
+    ("M-S-r", spawn restartCommand)
+  ] where
+      lockScreenCommand = "xset s activate"
+      lockCommand = "xflock4"
+      restartCommand = "killall xmobar; xmonad --recompile; xmonad --restart"
 
 myStartupHook :: X ()
 myStartupHook = do
   spawnOnce "xrandr --dpi 124 &"
   spawnOnce "picom -b --config ~/.config/picom/picom.conf &" -- picom composite manager
+
   -- systray applets
   spawn "killall trayer"
-  spawn "sleep 2 && trayer --edge top --align right --widthtype percent --width 6 --height 34 --transparent true --tint 0x1b1b1b"
-
+  spawn "sleep 2 && trayer --SetDockType true --SetPartialStrut true --edge top --align right --widthtype percent --width 6 --height 34 --transparent true --tint 0x1b1b1b"
   spawnOnce "nm-applet &" -- network manager
   -- spawnOnce "pasystray" -- pasystray
   spawnOnce "blueman-applet &" -- bluetooth applet
   -- spawnOnce "xscreensaver --no-splash &" -- lock-screen and screen-saver
+
   spawnOnce "nitrogen --restore &" -- set wallpaper
   spawnOnce "setxkbmap -option ctrl:nocaps" -- caps to ctrl
   spawnOnce "xsetroot -cursor_name left_ptr &" -- set cursor icon
   spawnOnce "xfce4-power-manager &" -- power-manager
   -- spawnOnce "/usr/libexec/polkit-gnome-authentication-agent-1"
   spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &" -- polkit authentication
-  -- spawnOnce "$HOME/.config/polybar/launch.sh &"
   spawnOnce "xinput set-prop 'ETPS/2 Elantech Touchpad' 'libinput Natural Scrolling Enabled' 1 &" -- natural scrolling
 
 myLayout =
@@ -146,8 +152,8 @@ myLayout =
               inactiveBorderColor = "#3B4252"
             }
 
-makeXmobarPPTop :: ScreenId -> PP
-makeXmobarPPTop screenId =
+makeXmobarPP :: ScreenId -> PP
+makeXmobarPP screenId =
   def
     { ppSep = magenta " • ",
       ppTitleSanitize = xmobarStrip,
@@ -175,12 +181,8 @@ makeXmobarPPTop screenId =
     red = xmobarColor "#ff5555" ""
     lowWhite = xmobarColor "#bbbbbb" ""
 
-topStatusBarSpawner screenId@(S s) =
-    statusBarPropTo
+statusBarSpawner screenId@(S s) =
+    pure $ statusBarPropTo
       ("_XMONAD_LOG_" <> show s)
-      ("xmobar -x " <> show s <> " ~/.config/xmobar/xmobar" <> show s <> ".hs")
-      (pure $ makeXmobarPPTop screenId)
-
-statusBarsSpawner :: ScreenId -> IO StatusBarConfig
-statusBarsSpawner screenId@(S s) =
-  pure $ topStatusBarSpawner screenId
+      ("xmobar -x " <> show s <> " " <> "$HOME/.config/xmobar/xmobar" <> show s <> ".hs")
+      (pure $ makeXmobarPP screenId)
