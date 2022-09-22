@@ -4,7 +4,6 @@
 (use-package modus-themes
   :ensure
   :custom
-  (modus-themes-bold-constructs t)
   (modus-themes-italic-constructs t)
   (modus-themes-syntax '(alt-syntax green-strings))
   (modus-themes-mode-line '(moody accented borderless))
