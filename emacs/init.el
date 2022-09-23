@@ -84,7 +84,7 @@
 ;; ;; these packages result in things mostly cosmetic.
 
 (require 'setup-rainbow-brackets)
-(require 'setup-modus-themes)
+(require 'setup-theme)
 (require 'setup-dashboard)
 (require 'setup-devdocs)
 
