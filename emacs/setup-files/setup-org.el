@@ -31,13 +31,19 @@
    org-agenda-files (find-lisp-find-files org-directory "\**\.org$")
   )
 
-(use-package org-bullets
-  :after org
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+;; (use-package org-bullets
+;;   :after org
+;;   :config
+;;   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (use-package ox-hugo
   :after ox)
+
+(use-package org-modern
+  :after org
+  :config
+  (add-hook 'org-mode-hook #'org-modern-mode)
+  (add-hook 'org-agenda-finalize-hook #'org-modern-agenda))
 
 ;;(setenv "BROWSER" "firefox")
 
