@@ -42,6 +42,6 @@ font pango:Hack Regular 10
 
 exec_always killall waybar & sleep 1 && waybar
 
-include /etc/sway/config.d/*
+# include /etc/sway/config.d/*
 include ./config.d/*
 include ./setup/*
