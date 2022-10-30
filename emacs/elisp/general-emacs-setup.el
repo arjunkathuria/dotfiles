@@ -18,7 +18,9 @@
 
   ;; Font settings
   ;; set font-face
-  (set-face-attribute 'default nil :font "Source Code Pro" :height 115)
+  ;; (set-face-attribute 'default nil :font "Source Code Pro" :height 115)
+  ;; (set-frame-font "Martian Mono StdRg-12" nil t)
+  (custom-theme-set-faces 'user '(default ((t :font "Martian Mono-12"))))
 
   ;; Removes the side-scrollbars from emacs
   (scroll-bar-mode -1)
