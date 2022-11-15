@@ -94,6 +94,7 @@
 
 ;; GENERAL SETUP
 (require 'general-emacs-setup)
+(require 'setup-modus-themes)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
