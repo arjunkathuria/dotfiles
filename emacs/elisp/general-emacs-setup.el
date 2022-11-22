@@ -43,6 +43,11 @@
   (setq make-backup-files nil)
   (setq create-lockfiles nil)
   (setq auto-save-default nil)
+
+  :config
+  ;; set initial pane size
+  (add-to-list 'default-frame-alist '(width . 120))
+  (add-to-list 'default-frame-alist '(height . 40))
   )
 
 ;;----------------------
