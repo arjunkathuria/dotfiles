@@ -20,7 +20,7 @@ set $term kitty
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
-font pango:Hack Regular 10
+font pango:Hack Regular 12
 
 #
 # Status Bar:
