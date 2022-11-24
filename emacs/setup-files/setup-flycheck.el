@@ -2,6 +2,7 @@
   :init
   ;;(global-flycheck-mode)
   (add-hook 'after-init-hook 'global-flycheck-mode)
+  (add-hook 'haskell-mode-hook #'flycheck-haskell-setup)
 
   :custom
   (flycheck-ghc-args '("-Wall"))
@@ -19,9 +20,9 @@
    ispell-program-name "hunspell"
    ispell-dictionary "en_US"))
 
-(use-package flycheck-color-mode-line
-  :after (flycheck)
-  :hook
-  ((flycheck-mode . flycheck-color-mode-line-mode)))
+;; (use-package flycheck-color-mode-line
+;;   :after (flycheck)
+;;   :hook
+;;   ((flycheck-mode . flycheck-color-mode-line-mode)))
 
 (provide 'setup-flycheck)
