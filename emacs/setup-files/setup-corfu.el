@@ -25,19 +25,18 @@
   :init
   ;;(corfu-global-mode)
   (global-corfu-mode)
+  (corfu-popupinfo-mode t)
+  (corfu-echo-mode t)
   )
 
 ;; Use dabbrev with Corfu!
 (use-package dabbrev
   ;; Swap M-/ and C-M-/
   :bind (("M-/" . dabbrev-completion)
-         ("C-M-/" . dabbrev-expand)))
+         ("C-M-/" . dabbrev-expand))
 
-(use-package corfu-doc
-  :after corfu
-  :init
-  (add-hook 'corfu-mode-hook #'corfu-doc-mode)
-  )
+  :custom
+  (dabbrev-ignored-buffer-regexps '("\\.\\(?:pdf\\|jpe?g\\|png\\)\\'")))
 
 (use-package kind-icon
   :after corfu
