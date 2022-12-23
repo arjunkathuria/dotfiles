@@ -4,10 +4,20 @@
 (use-package haskell-mode
   :bind
   ("C-c c" . 'haskell-compile)
-  ("C-c h" . 'haskell-check)
+  ("C-c h" . 'hoogle)
+  ("C-c C-c" . 'haskell-check)
 
   :config
+  (add-hook 'haskell-mode-hook 'subword-mode)
+  (add-hook 'haskell-cabal-mode 'subword-mode)
   (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+
+  ;; Auto Mode
+   ;;(add-auto-mode 'haskell-mode "\\.ghci\\'")
+  (add-to-list 'auto-mode-alist '("\\.ghci\\'" . haskell-mode))
+
+  ;; Indentation
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
   :custom
   ;; set interactive haskell mode variable settings
