@@ -57,8 +57,9 @@
 
 ;;(require 'setup-prettier)
 
-(require 'setup-flycheck)
+(require 'setup-flymake)
 ;; (require 'setup-sml)
+(require 'setup-ispell)
 (require 'setup-all-the-icons)
 (require 'setup-neotree)
 (require 'setup-ace-window)
@@ -84,7 +85,8 @@
 ;; ;; these packages result in things mostly cosmetic.
 
 (require 'setup-rainbow-brackets)
-(require 'setup-theme)
+;; (require 'setup-theme)
+(require 'setup-modus-themes)
 (require 'setup-dashboard)
 (require 'setup-devdocs)
 
@@ -101,7 +103,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background nil)))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -109,13 +111,13 @@
  ;; If there is more than one, they won't work right.
  '(all-the-icons-dired-monochrome nil)
  '(custom-safe-themes
-   '("37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" "b0e446b48d03c5053af28908168262c3e5335dcad3317215d9fdeb8bac5bacf9" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "bc97a397933189a7b6cc7b859df0bccd1d744e31f2b0391e9ca311adcc7d2eab" "1704976a1797342a1b4ea7a75bdbb3be1569f4619134341bd5a4c1cfb16abad4" "760ce657e710a77bcf6df51d97e51aae2ee7db1fba21bbad07aab0fa0f42f834" default))
+   '("7dc296b80df1b29bfc4062d1a66ee91efb462d6a7a934955e94e786394d80b71" "37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" "b0e446b48d03c5053af28908168262c3e5335dcad3317215d9fdeb8bac5bacf9" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "bc97a397933189a7b6cc7b859df0bccd1d744e31f2b0391e9ca311adcc7d2eab" "1704976a1797342a1b4ea7a75bdbb3be1569f4619134341bd5a4c1cfb16abad4" "760ce657e710a77bcf6df51d97e51aae2ee7db1fba21bbad07aab0fa0f42f834" default))
  '(fill-column 80)
  '(linum-format " %7i ")
  '(org-noter-notes-search-path
    '("~/Documents" "~/Documents/notes" "~/Documents/notes/books"))
  '(package-selected-packages
-   '(haskell-snippets ef-themes pdf-tools org-noter-pdftools org-pdftools electric-spacing org-modern smartparens rust-mode tree-sitter-ispell flycheck-color-mode-line boon tree-sitter tree-sitter-langs modus-themes prettier dash devdocs envrc nix-mode nix-modeline ormolu reformatter sublime-themes catppuccin-theme cider flatland-theme all-the-icons-completion corfu-doc consult-flycheck flycheck-aspell zenburn-theme consult-projectile consult-eglot eglot diff-hl whitespace-cleanup-mode which-key hl-indent minions consult-yasnippet yasnippet kind-icon cape corfu orderless vertico dhall-mode consult-dir line-reminder timu-spacegrey-theme ox-hugo yaml-imenu yaml-mode visual-fill-column snazzy-theme embark-consult git-link oceanic-theme sketch-themes good-scroll mini-frame marginalia consult ctrlf shell-switcher hindent kaolin-themes hybrid-reverse-theme purescript-mode org-notifications org-roam side-hustle projectile vterm vterm-toggle rcirc-alert doom-modeline doom-themes multiple-cursors solarized-theme magit-org-todos org gnu-elpa-keyring-update circadian define-it org-alert org-link-beautify define-word org-bullets nov suggestion-box metronome transpose-frame immaterial-theme string-inflection paredit all-the-icons-dired all-the-icons-ibuffer use-package flycheck-haskell haskell-mode pipenv all-the-icons dashboard exec-path-from-shell whole-line-or-region lorem-ipsum irony nordless-theme color-theme-sanityinc-tomorrow spacegray-theme dad-joke nord-theme bm markdown-mode flyspell-popup web-mode vi-tilde-fringe undo-tree rjsx-mode restart-emacs rainbow-mode rainbow-delimiters neotree material-theme magit json-mode js2-refactor git-gutter flycheck-pos-tip emmet-mode color-theme-sanityinc-solarized base16-theme ag ace-window)))
+   '(flymake-haskell-multi haskell-snippets ef-themes pdf-tools org-noter-pdftools org-pdftools electric-spacing org-modern smartparens rust-mode tree-sitter-ispell boon tree-sitter tree-sitter-langs modus-themes prettier dash devdocs envrc nix-mode nix-modeline ormolu reformatter sublime-themes catppuccin-theme cider flatland-theme all-the-icons-completion corfu-doc zenburn-theme consult-projectile consult-eglot eglot diff-hl whitespace-cleanup-mode which-key hl-indent minions consult-yasnippet yasnippet kind-icon cape corfu orderless vertico dhall-mode consult-dir line-reminder timu-spacegrey-theme ox-hugo yaml-imenu yaml-mode visual-fill-column snazzy-theme embark-consult git-link oceanic-theme sketch-themes good-scroll mini-frame marginalia consult ctrlf shell-switcher hindent kaolin-themes hybrid-reverse-theme purescript-mode org-notifications org-roam side-hustle projectile vterm vterm-toggle rcirc-alert doom-modeline doom-themes multiple-cursors solarized-theme magit-org-todos org gnu-elpa-keyring-update circadian org-alert org-link-beautify define-word org-bullets nov suggestion-box metronome transpose-frame immaterial-theme string-inflection paredit all-the-icons-dired all-the-icons-ibuffer use-package haskell-mode pipenv all-the-icons dashboard exec-path-from-shell whole-line-or-region lorem-ipsum irony nordless-theme color-theme-sanityinc-tomorrow spacegray-theme dad-joke nord-theme bm markdown-mode flyspell-popup web-mode vi-tilde-fringe undo-tree rjsx-mode restart-emacs rainbow-mode rainbow-delimiters neotree material-theme magit json-mode js2-refactor git-gutter emmet-mode color-theme-sanityinc-solarized base16-theme ag ace-window)))
 
 (provide 'init)
 ;;; init.el ends here
