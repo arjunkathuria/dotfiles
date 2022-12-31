@@ -54,7 +54,7 @@
 
 (require 'setup-web-mode)
 ;;(require 'setup-electric-pair-mode)
-(require setup-smartparens)
+(require 'setup-smartparens)
 
 ;;(require 'setup-prettier)
 
