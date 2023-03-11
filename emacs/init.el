@@ -53,6 +53,7 @@
 (require 'setup-tree-sitter)
 
 (require 'setup-web-mode)
+(require 'setup-css)
 ;;(require 'setup-electric-pair-mode)
 (require 'setup-smartparens)
 
