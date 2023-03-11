@@ -70,6 +70,7 @@
 (require 'setup-whitespace-cleanup)
 
 (require 'setup-haskell)
+(require 'setup-tide)
 (require 'setup-nov)
 (require 'setup-magit)
 (require 'setup-org)
