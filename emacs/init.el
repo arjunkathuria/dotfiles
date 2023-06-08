@@ -63,6 +63,7 @@
 ;; (require 'setup-sml)
 (require 'setup-ispell)
 (require 'setup-all-the-icons)
+(require 'setup-nerd-icons)
 (require 'setup-neotree)
 (require 'setup-ace-window)
 (require 'setup-whichkey)
