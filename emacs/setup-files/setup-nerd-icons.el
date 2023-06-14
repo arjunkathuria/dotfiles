@@ -8,9 +8,12 @@
   :after nerd-icons
   :hook
   ('dired-mode . 'nerd-icons-dired-mode)
-  :config
-  (add-hook 'dired-mode-hook 'nerd-icons-dired-mode)
-  (add-hook 'dired-mode-hook #'nerd-icons-dired-mode)
+  ;; :config
+  ;; (add-hook 'dired-mode-hook 'nerd-icons-dired-mode)
+  ;; (add-hook 'dired-mode-hook #'nerd-icons-dired-mode)
+  :custom
+  (nerd-icons-completion-mode 1)
+  (nerd-icons-ibuffer-mode 1)
   )
 
 (provide 'setup-nerd-icons)
