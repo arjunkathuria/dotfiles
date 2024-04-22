@@ -12,8 +12,21 @@
   ;; (add-hook 'dired-mode-hook 'nerd-icons-dired-mode)
   ;; (add-hook 'dired-mode-hook #'nerd-icons-dired-mode)
   :custom
-  (nerd-icons-completion-mode 1)
   (nerd-icons-ibuffer-mode 1)
   )
+
+(use-package nerd-icons-completion
+  :after nerd-icons
+  :custom
+  (nerd-icons-completion-mode 1))
+
+(use-package nerd-icons-ibuffer
+  :after nerd-icons
+  :custom
+  (nerd-icons-completion 1))
+
+(use-package treemacs-nerd-icons
+  :config
+  (treemacs-load-theme "nerd-icons"))
 
 (provide 'setup-nerd-icons)
