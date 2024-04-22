@@ -24,7 +24,7 @@
   (exec-path-from-shell-initialize))
 
 ;; Bootstrap 'use-package'
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+;; (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (if (not (package-installed-p 'use-package))
     (package-install 'use-package))
