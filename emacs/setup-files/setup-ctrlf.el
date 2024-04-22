@@ -4,6 +4,6 @@
 
 (use-package ctrlf
   :config
-  (ctrlf-mode))
+  (ctrlf-mode +1))
 
 (provide 'setup-ctrlf)
