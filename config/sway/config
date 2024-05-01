@@ -20,28 +20,7 @@ set $term kitty
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
-font pango:Hack Regular 12
+# font pango:Hack Regular 13
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-# bar {
-#     position top
-
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-
-#     colors {
-#         statusline #ffffff
-#         background #323232
-#         inactive_workspace #32323200 #32323200 #5c5c5c
-#     }
-# }
-
-exec_always killall waybar & sleep 1 && waybar
-
-# include /etc/sway/config.d/*
-include ./config.d/*
+# include other setup files
 include ./setup/*
