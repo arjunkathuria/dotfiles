@@ -110,5 +110,7 @@ return {
         })
       end,
     })
+
+    lspconfig.pyright.setup{} -- enable pyright for python
   end,
 }
